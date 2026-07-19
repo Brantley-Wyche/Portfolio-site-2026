@@ -1,12 +1,20 @@
 // -----------------------------------------------------------------------------
-// Featured projects. Placeholder content — swap in real projects when ready.
-// `featured: true` gives a card the wider, highlighted treatment.
+// Selected work
+//
+// The cards intentionally support an empty portfolio state. Add the optional
+// fields as each project is ready and the same component will reveal the richer
+// case-study treatment without requiring a layout rewrite.
 // -----------------------------------------------------------------------------
 
+export type ProjectVisualKind = 'architecture' | 'interface' | 'workflow';
+
 export interface Project {
+  id: string;
   title: string;
-  blurb: string;
-  tags: string[];
+  description?: string;
+  role?: string;
+  tags?: string[];
+  visualKind: ProjectVisualKind;
   liveUrl?: string;
   repoUrl?: string;
   featured?: boolean;
@@ -14,28 +22,19 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: 'Project One',
-    blurb:
-      'Placeholder — describe a flagship project here. What problem did it solve, who was it for, and what was your role? Lead with impact, then the interesting technical decisions.',
-    tags: ['React', 'TypeScript', 'Vite'],
-    liveUrl: '#',
-    repoUrl: '#',
+    id: 'project-1',
+    title: 'Project 1',
+    visualKind: 'architecture',
     featured: true,
   },
   {
-    title: 'Project Two',
-    blurb:
-      'Placeholder — a focused build that shows range. One or two sentences on what it does and a result you are proud of.',
-    tags: ['React', 'CSS', 'Accessibility'],
-    liveUrl: '#',
-    repoUrl: '#',
+    id: 'project-2',
+    title: 'Project 2',
+    visualKind: 'interface',
   },
   {
-    title: 'Project Three',
-    blurb:
-      'Placeholder — something that demonstrates craft: an animation, a design-system component, a tricky state problem solved cleanly.',
-    tags: ['TypeScript', 'Design System'],
-    liveUrl: '#',
-    repoUrl: '#',
+    id: 'project-3',
+    title: 'Project 3',
+    visualKind: 'workflow',
   },
 ];

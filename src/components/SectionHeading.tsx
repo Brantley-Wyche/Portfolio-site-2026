@@ -15,8 +15,8 @@ export function SectionHeading({
   return (
     <Reveal>
       <Eyebrow>{eyebrow}</Eyebrow>
-      <h2 className="mt-3 text-[clamp(1.75rem,1.2rem+2vw,2.5rem)] font-bold">{title}</h2>
-      <p className="mt-4 max-w-[56ch] text-[1.0625rem] text-muted">{lead}</p>
+      <h2 className="balance-text mt-3 text-[clamp(2.35rem,1.55rem+3vw,4.75rem)] font-extrabold">{title}</h2>
+      <p className="mt-5 max-w-[58ch] text-[clamp(1rem,0.96rem+0.22vw,1.15rem)] text-muted">{lead}</p>
     </Reveal>
   );
 }

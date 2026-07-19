@@ -6,6 +6,7 @@ import { Projects } from './components/Projects';
 import { Skills } from './components/Skills';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { Beyond } from './components/Beyond';
 
 export default function App() {
   return (
@@ -19,10 +20,11 @@ export default function App() {
       <Nav />
       <main id="main">
         <Hero />
+        <Projects />
         <ValueProp />
         <Experience />
-        <Projects />
         <Skills />
+        <Beyond />
         <Contact />
       </main>
       <Footer />

@@ -1,85 +1,117 @@
 import { education, experience } from '../data/experience';
 import { Container } from './Container';
+import { FieldLabel, GraphPaper, PaperCard, Tape } from './Editorial';
 import { Reveal } from './Reveal';
 import { SectionHeading } from './SectionHeading';
 
+const evidence = [
+  { value: '16 → 21', label: 'Angular migration' },
+  { value: '8 teams', label: 'Coordinated delivery' },
+  { value: '$1M+', label: 'Annual licensing savings' },
+] as const;
+
 export function Experience() {
   return (
-    <section id="work" className="py-24 max-[720px]:py-16">
+    <section id="experience" className="section-shell bg-bg-subtle/55">
       <Container>
         <SectionHeading
-          eyebrow="Where I've worked"
-          title="Work history"
-          lead="Four years of shipping and scaling frontend at an enterprise bank — from intern to engineer leading cross-team initiatives."
+          eyebrow="Experience"
+          title="Building clearer systems at enterprise scale."
+          lead="From an intern shipping a high-value internal tool to an engineer coordinating a multi-team framework migration, my work has grown alongside the systems I help modernize."
         />
 
-        <ol className="relative mt-12">
-          {experience.map((role, i) => {
-            const isLast = i === experience.length - 1;
-            return (
-              <Reveal
-                key={`${role.company}-${role.period}`}
-                as="li"
-                delay={i * 80}
-                className="relative grid grid-cols-[24px_1fr] gap-6 pb-12 last:pb-0 max-[600px]:grid-cols-[18px_1fr] max-[600px]:gap-4"
+        <Reveal className="mt-12">
+          <GraphPaper className="grid grid-cols-3 max-[680px]:grid-cols-1">
+            {evidence.map((item, index) => (
+              <div
+                key={item.label}
+                className={`p-6 max-[680px]:flex max-[680px]:items-baseline max-[680px]:justify-between max-[680px]:gap-4 ${
+                  index > 0
+                    ? 'border-l border-accent/20 max-[680px]:border-l-0 max-[680px]:border-t'
+                    : ''
+                }`}
               >
-                <div className="relative flex justify-center">
-                  {!isLast && (
-                    <span className="absolute top-[6px] bottom-0 w-0.5 bg-border-strong" aria-hidden />
-                  )}
-                  <span
-                    aria-hidden
-                    className={`relative z-[1] mt-1 h-[14px] w-[14px] rounded-full border-2 ${
-                      role.current
-                        ? 'border-accent bg-accent shadow-[0_0_0_4px_var(--accent-soft)]'
-                        : 'border-border-strong bg-surface'
-                    }`}
-                  />
-                </div>
+                <strong className="font-display text-[clamp(1.8rem,1.25rem+2vw,3rem)] leading-none tracking-[-0.04em] text-accent">
+                  {item.value}
+                </strong>
+                <p className="mt-2 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted max-[680px]:mt-0 max-[680px]:text-right">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </GraphPaper>
+        </Reveal>
 
-                <div>
-                  <div className="flex flex-wrap items-center gap-3">
-                    <h3 className="text-[1.2rem] font-bold">
+        <ol className="relative mt-14 border-l border-border-strong/80 pl-9 max-[620px]:ml-2 max-[620px]:pl-6">
+          {experience.map((role, index) => (
+            <Reveal
+              key={`${role.company}-${role.period}`}
+              as="li"
+              delay={index * 100}
+              className="relative pb-12 last:pb-0"
+            >
+              <span
+                aria-hidden
+                className={`absolute -left-[2.7rem] top-8 h-4 w-4 rounded-full border-2 max-[620px]:-left-[2rem] ${
+                  role.current
+                    ? 'border-accent bg-surface shadow-[0_0_0_5px_var(--accent-soft)]'
+                    : 'border-border-strong bg-bg'
+                }`}
+              />
+
+              <PaperCard className="p-[clamp(1.4rem,1rem+2vw,2.4rem)]">
+                {role.current && <Tape side="right" />}
+                <div className="flex flex-wrap items-start justify-between gap-x-8 gap-y-3">
+                  <div>
+                    <FieldLabel>{role.company}</FieldLabel>
+                    <h3 className="mt-2 text-[clamp(1.4rem,1.15rem+0.8vw,2rem)] font-bold">
                       {role.title}
-                      <span className="font-semibold text-accent"> · {role.company}</span>
                     </h3>
-                    {role.current && (
-                      <span className="rounded-full bg-accent-soft px-[0.55rem] py-[0.2rem] font-mono text-[0.72rem] font-medium text-accent">
-                        Current
-                      </span>
-                    )}
                   </div>
-
-                  <p className="mt-2 text-[0.875rem] text-faint">
-                    {role.location} <span aria-hidden>·</span> {role.period}
-                  </p>
-
-                  <ul className="mt-4 flex flex-col gap-3">
-                    {role.highlights.map((point) => (
-                      <li
-                        key={point}
-                        className="relative pl-6 text-[0.975rem] text-muted before:absolute before:left-0.5 before:top-[0.6em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-accent before:opacity-70 before:content-['']"
-                      >
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="text-left sm:text-right">
+                    <p className="font-mono text-[0.78rem] font-semibold text-text">{role.period}</p>
+                    <p className="mt-1 text-[0.8rem] text-faint">{role.location}</p>
+                  </div>
                 </div>
-              </Reveal>
-            );
-          })}
+
+                <div className="ink-rule my-6" />
+
+                <ul className="grid gap-3 md:grid-cols-2 md:gap-x-8">
+                  {role.highlights.map((point) => (
+                    <li
+                      key={point}
+                      className="relative pl-5 text-[0.95rem] text-muted before:absolute before:left-0 before:top-[0.65em] before:h-1.5 before:w-1.5 before:rotate-45 before:bg-accent before:content-['']"
+                    >
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </PaperCard>
+            </Reveal>
+          ))}
         </ol>
 
-        <Reveal className="mt-8 flex items-center justify-between gap-4 rounded-[14px] border border-border bg-surface p-6 shadow-[var(--shadow-sm)] max-[600px]:flex-col max-[600px]:items-start max-[600px]:gap-2">
-          <div>
-            <h3 className="text-[1.2rem] font-bold">{education.degree}</h3>
-            <p className="mt-2 text-[0.875rem] text-faint">
-              {education.school} <span aria-hidden>·</span> {education.location}
-            </p>
-          </div>
-          <span className="whitespace-nowrap font-mono text-[0.85rem] text-faint">
-            {education.period}
-          </span>
+        <Reveal className="mt-12">
+          <PaperCard className="flex items-center justify-between gap-6 p-6 max-[620px]:items-start">
+            <div className="flex gap-4">
+              <span
+                aria-hidden
+                className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent-soft font-mono text-sm font-bold text-accent"
+              >
+                RIT
+              </span>
+              <div>
+                <FieldLabel>Education</FieldLabel>
+                <h3 className="mt-2 text-[1.15rem] font-bold">{education.degree}</h3>
+                <p className="mt-1 text-[0.875rem] text-muted">
+                  {education.school} · {education.location}
+                </p>
+              </div>
+            </div>
+            <span className="whitespace-nowrap font-mono text-[0.78rem] font-semibold text-faint max-[620px]:hidden">
+              {education.period}
+            </span>
+          </PaperCard>
         </Reveal>
       </Container>
     </section>

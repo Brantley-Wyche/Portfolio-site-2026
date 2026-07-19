@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-/** Centered, max-width page gutter used by every section. */
+/** Centered page gutter used by every section. */
 export function Container({
   children,
   className = '',
@@ -9,7 +9,7 @@ export function Container({
   className?: string;
 }) {
   return (
-    <div className={`mx-auto w-full max-w-[1080px] px-6 ${className}`.trim()}>
+    <div className={`mx-auto w-full max-w-[1240px] px-6 sm:px-8 ${className}`.trim()}>
       {children}
     </div>
   );

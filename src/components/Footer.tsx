@@ -6,50 +6,56 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border py-8">
-      <Container className="flex flex-wrap items-center justify-between gap-4 max-[560px]:justify-center max-[560px]:text-center">
-        <p className="text-[0.875rem] text-faint">
-          © {year} {site.name}. Built with React &amp; TypeScript.
+    <footer className="border-t border-border-strong/70 bg-bg-subtle/65 py-8">
+      <Container className="grid grid-cols-[1fr_auto_1fr] items-center gap-5 max-[700px]:grid-cols-1 max-[700px]:justify-items-center max-[700px]:text-center">
+        <div>
+          <p className="font-display text-[1.05rem] font-bold text-text">{site.name}</p>
+          <p className="mt-1 font-mono text-[0.65rem] font-semibold uppercase tracking-[0.11em] text-faint">
+            Frontend software engineer
+          </p>
+        </div>
+
+        <p className="text-center text-[0.78rem] text-faint">
+          © {year} · Built with React &amp; TypeScript
         </p>
 
-        <div className="order-3 flex gap-2">
+        <div className="flex items-center justify-end gap-1 justify-self-end max-[700px]:justify-self-center">
           <a
             href={`mailto:${site.email}`}
-            aria-label="Email"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-muted transition hover:bg-bg-subtle hover:text-accent"
+            aria-label="Email Brantley Wyche"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-muted transition hover:bg-surface hover:text-accent"
           >
-            <Mail size={18} />
+            <Mail size={17} />
           </a>
           {site.linkedin && (
             <a
               href={site.linkedin}
-              aria-label="LinkedIn"
+              aria-label="LinkedIn profile"
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-muted transition hover:bg-bg-subtle hover:text-accent"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-muted transition hover:bg-surface hover:text-accent"
             >
-              <Linkedin size={18} />
+              <Linkedin size={17} />
             </a>
           )}
           {site.github && (
             <a
               href={site.github}
-              aria-label="GitHub"
+              aria-label="GitHub profile"
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-muted transition hover:bg-bg-subtle hover:text-accent"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-muted transition hover:bg-surface hover:text-accent"
             >
-              <Github size={18} />
+              <Github size={17} />
             </a>
           )}
+          <a
+            href="#top"
+            className="ml-2 font-mono text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-muted transition hover:text-accent"
+          >
+            Back to top ↑
+          </a>
         </div>
-
-        <a
-          href="#top"
-          className="text-[0.875rem] font-medium text-muted transition hover:text-accent"
-        >
-          Back to top ↑
-        </a>
       </Container>
     </footer>
   );

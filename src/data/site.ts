@@ -6,8 +6,6 @@
 export const site = {
   name: 'Brantley Wyche',
   role: 'Frontend Software Engineer',
-  // Not currently rendered anywhere; kept as data (the address also appears
-  // hardcoded in index.html's JSON-LD).
   location: 'West Orange, NJ',
   email: 'brantleywyche24@gmail.com',
   resumeUrl: '/Brantley-Wyche-Resume.pdf',
@@ -15,6 +13,9 @@ export const site = {
   // TODO: drop in your real profile URLs (leave blank to hide the link).
   github: '',
   linkedin: '',
+
+  shortBio:
+    'Frontend engineer building accessible interfaces, maintainable systems, and thoughtful experiences for complex products.',
 } as const;
 
 export type Site = typeof site;

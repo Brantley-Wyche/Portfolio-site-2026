@@ -1,71 +1,69 @@
-import { site } from '../data/site';
 import { stats } from '../data/stats';
-import { ArrowRight, Download } from './Icons';
+import { ArrowRight } from './Icons';
 import { Button } from './Button';
-import { CodeCard } from './CodeCard';
+import { FieldLabel } from './Editorial';
+import { HeroCollage } from './HeroCollage';
 
 export function Hero() {
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden pt-[clamp(3.5rem,2.5rem+6vw,6.5rem)] pb-20"
-    >
-      <div className="pointer-events-none absolute inset-0 [background:var(--hero-glow)]" aria-hidden />
+    <section id="top" className="relative overflow-hidden pb-16 pt-[clamp(3.75rem,8vw,7.25rem)] lg:pb-24">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-[-7rem] top-[-10rem] h-[32rem] w-[32rem] rounded-full bg-accent-soft blur-3xl"
+      />
 
-      <div className="relative mx-auto w-full max-w-[1080px] px-6">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
-          {/* Text column */}
-          <div className="lg:col-span-7">
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-2 text-[0.85rem] font-medium text-muted shadow-[var(--shadow-sm)]">
-              <span
-                aria-hidden
-                className="h-2 w-2 rounded-full bg-[#2ec16b] shadow-[0_0_0_4px_rgba(46,193,107,0.18)]"
-              />
-              Open to frontend &amp; full-stack roles in NYC/NJ
-            </span>
+      <div className="relative mx-auto w-full max-w-[1180px] px-6 lg:px-8">
+        <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(430px,0.82fr)] lg:gap-12">
+          <div>
+            <div className="flex items-center gap-3">
+              <span aria-hidden className="h-px w-8 bg-accent" />
+              <FieldLabel>Frontend software engineer</FieldLabel>
+            </div>
 
-            <h1 className="mt-6 text-[clamp(2.25rem,1.5rem+2.8vw,3.5rem)] font-extrabold leading-[1.05] tracking-[-0.03em]">
-              I build accessible interfaces for{' '}
-              <span className="text-accent">complex web apps</span>.
+            <h1 className="balance-text mt-6 max-w-[10.5ch] text-[clamp(3.25rem,7.4vw,6.65rem)] font-extrabold leading-[0.92] tracking-[-0.065em] text-text">
+              Complex frontend. <span className="text-accent">Clear thinking.</span>
             </h1>
 
-            <p className="mt-5 max-w-[46ch] text-[clamp(1.05rem,1rem+0.3vw,1.2rem)] text-muted">
-              Five years building enterprise web apps that are fast, accessible, and easy to
-              maintain.
+            <p className="mt-7 max-w-[59ch] text-[clamp(1.03rem,1rem+0.35vw,1.2rem)] leading-[1.72] text-muted">
+              I’m Brantley, an experienced frontend engineer building accessible systems for
+              complex products. I bring architecture, design systems, and thoughtful UI
+              engineering together to make software clearer for users and the teams behind it.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3 max-[640px]:w-full">
-              {/* Points at #work while Projects holds placeholders — retarget to
-                  #projects once real projects are in. */}
-              <Button href="#work" variant="primary" className="max-[640px]:flex-1">
+            <div className="mt-8 flex flex-wrap gap-3 max-[520px]:flex-col">
+              <Button href="#projects" className="max-[520px]:w-full">
                 View my work
-                <ArrowRight size={18} className="transition group-hover:translate-x-[3px]" />
+                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </Button>
               <Button
-                href={site.resumeUrl}
-                download
+                href="#contact"
                 variant="secondary"
-                className="max-[640px]:flex-1"
+                className="max-[520px]:w-full"
               >
-                <Download size={18} />
-                Download résumé
+                Get in touch
               </Button>
             </div>
           </div>
 
-          {/* Code card column */}
-          <div className="lg:col-span-5">
-            <CodeCard />
-          </div>
+          <HeroCollage />
         </div>
 
-        <dl className="mt-16 grid grid-cols-3 gap-6 border-t border-border pt-8 max-[640px]:grid-cols-1">
-          {stats.map((stat) => (
-            <div key={stat.label}>
-              <dt className="text-[clamp(1.8rem,1.4rem+1.5vw,2.5rem)] font-extrabold tracking-[-0.03em] text-text">
-                {stat.value}
+        <dl className="mt-[clamp(4rem,8vw,7rem)] grid gap-px overflow-hidden rounded-[14px] border border-border bg-border sm:grid-cols-3">
+          {stats.map((stat, index) => (
+            <div
+              key={stat.label}
+              className="group relative bg-surface px-6 py-6 transition-colors hover:bg-bg-subtle sm:px-7"
+            >
+              <dt className="font-display text-[clamp(2rem,4vw,3rem)] font-extrabold leading-none tracking-[-0.05em] text-text">
+                {index === 1 ? `${stat.value} teams` : stat.value}
               </dt>
-              <dd className="mt-2 text-[0.9rem] leading-[1.45] text-muted">{stat.label}</dd>
+              <dd className="mt-2.5 max-w-[30ch] text-[0.82rem] leading-[1.5] text-muted">
+                {index === 1 ? 'Aligned through a major framework migration' : stat.label}
+              </dd>
+              <span
+                aria-hidden
+                className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-accent transition-transform duration-300 group-hover:scale-x-100"
+              />
             </div>
           ))}
         </dl>
