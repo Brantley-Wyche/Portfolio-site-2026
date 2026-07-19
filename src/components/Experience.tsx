@@ -60,7 +60,7 @@ export function Experience() {
               />
 
               <PaperCard className="p-[clamp(1.4rem,1rem+2vw,2.4rem)]">
-                {role.current && <Tape side="right" />}
+                <Tape side={role.current ? 'right' : 'left'} className={role.current ? '' : 'w-20'} />
                 <div className="flex flex-wrap items-start justify-between gap-x-8 gap-y-3">
                   <div>
                     <FieldLabel>{role.company}</FieldLabel>

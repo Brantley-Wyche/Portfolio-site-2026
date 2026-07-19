@@ -17,7 +17,7 @@ export function Beyond() {
         <SectionHeading
           eyebrow="Beyond the résumé"
           title="A little more context."
-          lead="The work matters, but so does the way it gets made. I’m looking for teams that care about thoughtful interfaces and clear technical decisions."
+          lead="I’m looking to join a collaborative team where people bring different strengths, learn from one another, and work together toward shared goals."
         />
 
         <div className="mt-12 grid grid-cols-[minmax(0,1.35fr)_minmax(17rem,0.65fr)] gap-6 max-[820px]:grid-cols-1">
@@ -40,7 +40,8 @@ export function Beyond() {
           <Reveal delay={100} className="relative pt-3 max-[820px]:max-w-xl">
             <NoteCard className="rotate-[1deg] p-7 max-[820px]:rotate-0">
               <Tape side="left" />
-              <p className="handwritten text-[clamp(1.65rem,1.25rem+1.5vw,2.35rem)] leading-[1.05] text-text">
+              <FieldLabel>What I value</FieldLabel>
+              <p className="handwritten mt-4 text-[clamp(1.65rem,1.25rem+1.5vw,2.35rem)] leading-[1.05] text-text">
                 Thoughtful interfaces. Clear systems. Practical collaboration.
               </p>
             </NoteCard>

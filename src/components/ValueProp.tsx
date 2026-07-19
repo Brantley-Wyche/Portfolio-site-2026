@@ -1,5 +1,5 @@
 import { Container } from './Container';
-import { FieldLabel, PaperCard } from './Editorial';
+import { FieldLabel, NoteCard, Tape } from './Editorial';
 import { Reveal } from './Reveal';
 import { SectionHeading } from './SectionHeading';
 
@@ -31,7 +31,12 @@ export function ValueProp() {
         <ol className="mt-12 grid grid-cols-3 gap-5 max-[880px]:grid-cols-1">
           {principles.map((principle, index) => (
             <Reveal key={principle.title} as="li" delay={index * 80}>
-              <PaperCard className="h-full p-7 transition duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-md)]">
+              <NoteCard
+                className={`h-full p-7 transition duration-200 hover:-translate-y-1 hover:rotate-0 hover:shadow-[var(--shadow-md)] max-[880px]:rotate-0 ${
+                  index === 0 ? '-rotate-[1deg]' : index === 1 ? 'rotate-[0.7deg]' : '-rotate-[0.5deg]'
+                }`}
+              >
+                <Tape side={index === 1 ? 'right' : 'left'} className={index === 1 ? 'w-20' : 'w-16'} />
                 <div className="flex items-center justify-between gap-4">
                   <FieldLabel>Principle {String(index + 1).padStart(2, '0')}</FieldLabel>
                   <span aria-hidden className="h-2.5 w-2.5 rounded-full border border-accent bg-accent-soft" />
@@ -41,7 +46,7 @@ export function ValueProp() {
                   {principle.title}
                 </h3>
                 <p className="mt-3 text-[0.975rem] text-muted">{principle.body}</p>
-              </PaperCard>
+              </NoteCard>
             </Reveal>
           ))}
         </ol>

@@ -41,7 +41,7 @@ Set `featured: true` on the flagship project to keep the larger card treatment.
 ## Page structure
 
 ```text
-Hero and working-board collage
+Centered hero and evidence metrics
 Selected work
 Approach
 Experience

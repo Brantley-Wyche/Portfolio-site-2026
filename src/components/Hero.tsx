@@ -2,7 +2,6 @@ import { stats } from '../data/stats';
 import { ArrowRight } from './Icons';
 import { Button } from './Button';
 import { FieldLabel } from './Editorial';
-import { HeroCollage } from './HeroCollage';
 
 export function Hero() {
   return (
@@ -13,42 +12,39 @@ export function Hero() {
       />
 
       <div className="relative mx-auto w-full max-w-[1180px] px-6 lg:px-8">
-        <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(430px,0.82fr)] lg:gap-12">
-          <div>
-            <div className="flex items-center gap-3">
-              <span aria-hidden className="h-px w-8 bg-accent" />
-              <FieldLabel>Frontend software engineer</FieldLabel>
-            </div>
-
-            <h1 className="balance-text mt-6 max-w-[10.5ch] text-[clamp(3.25rem,7.4vw,6.65rem)] font-extrabold leading-[0.92] tracking-[-0.065em] text-text">
-              Complex frontend. <span className="text-accent">Clear thinking.</span>
-            </h1>
-
-            <p className="mt-7 max-w-[59ch] text-[clamp(1.03rem,1rem+0.35vw,1.2rem)] leading-[1.72] text-muted">
-              I’m Brantley, an experienced frontend engineer building accessible systems for
-              complex products. I bring architecture, design systems, and thoughtful UI
-              engineering together to make software clearer for users and the teams behind it.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-3 max-[520px]:flex-col">
-              <Button href="#projects" className="max-[520px]:w-full">
-                View my work
-                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button
-                href="#contact"
-                variant="secondary"
-                className="max-[520px]:w-full"
-              >
-                Get in touch
-              </Button>
-            </div>
+        <div className="mx-auto max-w-[980px] text-center">
+          <div className="flex items-center justify-center gap-3">
+            <span aria-hidden className="h-px w-8 bg-accent" />
+            <FieldLabel>Frontend software engineer</FieldLabel>
+            <span aria-hidden className="h-px w-8 bg-accent" />
           </div>
 
-          <HeroCollage />
+          <h1 className="balance-text mx-auto mt-6 max-w-[12ch] text-[clamp(3.25rem,8vw,7.25rem)] font-extrabold leading-[0.92] tracking-[-0.065em] text-text">
+            Complex frontend. <span className="text-accent">Clear thinking.</span>
+          </h1>
+
+          <p className="mx-auto mt-7 max-w-[65ch] text-[clamp(1.03rem,1rem+0.35vw,1.2rem)] leading-[1.72] text-muted">
+            I’m Brantley, an experienced frontend engineer building accessible systems for
+            complex products. I bring architecture, design systems, and thoughtful UI
+            engineering together to make software clearer for users and the teams behind it.
+          </p>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-3 max-[520px]:flex-col">
+            <Button href="#projects" className="max-[520px]:w-full">
+              View my work
+              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+            </Button>
+            <Button
+              href="#contact"
+              variant="secondary"
+              className="max-[520px]:w-full"
+            >
+              Get in touch
+            </Button>
+          </div>
         </div>
 
-        <dl className="mt-[clamp(4rem,8vw,7rem)] grid gap-px overflow-hidden rounded-[14px] border border-border bg-border sm:grid-cols-3">
+        <dl className="mt-[clamp(4rem,7vw,6rem)] grid gap-px overflow-hidden rounded-[14px] border border-border bg-border text-left sm:grid-cols-3">
           {stats.map((stat, index) => (
             <div
               key={stat.label}

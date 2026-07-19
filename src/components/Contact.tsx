@@ -10,14 +10,14 @@ export function Contact() {
     <section id="contact" className="section-shell">
       <Container>
         <Reveal>
-          <GraphPaper className="grid grid-cols-[minmax(0,1fr)_minmax(17rem,0.42fr)] items-center gap-10 p-[clamp(1.75rem,1rem+4vw,4.5rem)] max-[800px]:grid-cols-1">
+          <GraphPaper className="grid grid-cols-[minmax(0,1fr)_minmax(23rem,0.52fr)] items-center gap-10 p-[clamp(1.75rem,1rem+4vw,4.5rem)] max-[800px]:grid-cols-1">
             <div>
               <FieldLabel>Start a conversation</FieldLabel>
               <h2 className="balance-text mt-4 max-w-[12ch] text-[clamp(2.4rem,1.55rem+3.5vw,5rem)] font-extrabold">
                 Let’s make complex things clearer.
               </h2>
               <p className="mt-5 max-w-[54ch] text-[1.05rem] text-muted">
-              I’m open to frontend engineering opportunities in the NYC and New Jersey area.
+                I’m open to frontend engineering opportunities in the NYC and New Jersey area.
                 If your team values thoughtful interfaces and durable systems, I’d like to hear from you.
               </p>
 
@@ -59,14 +59,14 @@ export function Contact() {
             </div>
 
             <div className="relative max-[800px]:max-w-sm">
-              <NoteCard className="rotate-[2deg] p-7 max-[800px]:rotate-0">
+              <NoteCard className="rotate-[2deg] p-6 max-[800px]:rotate-0">
                 <Tape side="right" />
                 <p className="font-mono text-[0.66rem] font-semibold uppercase tracking-[0.12em] text-muted">
                   Direct line
                 </p>
                 <a
                   href={`mailto:${site.email}`}
-                  className="mt-4 block break-words font-semibold text-text underline decoration-accent/50 decoration-2 hover:text-accent"
+                  className="mt-4 block whitespace-nowrap font-semibold text-text underline decoration-accent/50 decoration-2 hover:text-accent"
                 >
                   {site.email}
                 </a>
