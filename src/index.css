@@ -1,0 +1,183 @@
+@import 'tailwindcss';
+
+/* Drive dark mode from the [data-theme] attribute (set in index.html before paint)
+   rather than the prefers-color-scheme default. */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/* ---------------------------------------------------------------------------
+   Map our themeable CSS variables onto Tailwind tokens so utilities like
+   `bg-bg`, `text-muted`, `text-accent`, `border-border` work — and respond to
+   theme switches automatically, because the underlying vars swap on [data-theme].
+   `inline` keeps the references live instead of snapshotting them.
+   --------------------------------------------------------------------------- */
+@theme inline {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Consolas, monospace;
+
+  --color-bg: var(--bg);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-surface: var(--surface);
+  --color-text: var(--text);
+  --color-muted: var(--text-muted);
+  --color-faint: var(--text-faint);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-contrast: var(--accent-contrast);
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 20px;
+}
+
+/* ===========================================================================
+   Theme variables (raw values). These are the single source of truth that the
+   @theme mapping above points at.
+   =========================================================================== */
+:root,
+[data-theme='light'] {
+  --bg: #ffffff;
+  --bg-subtle: #f7f8fb;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --text: #11141a;
+  --text-muted: #5b6473;
+  --text-faint: #64748b; /* ≥4.5:1 on white — used for real (small) text, not just decoration */
+  --border: #e7e9ef;
+  --border-strong: #d4d8e2;
+  --accent: #0f766e;
+  --accent-strong: #0b5c55;
+  --accent-soft: rgba(15, 118, 110, 0.1);
+  --accent-contrast: #ffffff;
+  --shadow-sm: 0 1px 2px rgba(17, 20, 26, 0.04), 0 1px 3px rgba(17, 20, 26, 0.06);
+  --shadow-md: 0 4px 12px rgba(17, 20, 26, 0.06), 0 8px 28px rgba(17, 20, 26, 0.08);
+  --shadow-lg: 0 12px 32px rgba(17, 20, 26, 0.1), 0 24px 60px rgba(17, 20, 26, 0.1);
+  --hero-glow: radial-gradient(
+    60% 60% at 70% 10%,
+    rgba(15, 118, 110, 0.12),
+    transparent 70%
+  );
+  /* Code-editor card tokens (light) */
+  --code-surface: #f8fafc;
+  --code-chrome: #eef1f6;
+  --code-text: #334155;
+  --code-comment: #7c8698;
+  --code-keyword: #7c3aed;
+  --code-ident: #2563eb;
+  --code-string: #7c3aed;
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --bg: #0c0e13;
+  --bg-subtle: #11141b;
+  --bg-elevated: #161a22;
+  --surface: #141821;
+  --text: #f2f4f8;
+  --text-muted: #a4adbd;
+  --text-faint: #7f8899; /* ≥4.5:1 on --bg — used for real (small) text, not just decoration */
+  --border: #232834;
+  --border-strong: #303644;
+  --accent: #2dd4bf;
+  --accent-strong: #14b8a6;
+  --accent-soft: rgba(45, 212, 191, 0.14);
+  --accent-contrast: #06231f;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.4), 0 10px 30px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 14px 40px rgba(0, 0, 0, 0.5), 0 28px 70px rgba(0, 0, 0, 0.55);
+  --hero-glow: radial-gradient(
+    60% 60% at 70% 10%,
+    rgba(45, 212, 191, 0.16),
+    transparent 70%
+  );
+  /* Code-editor card tokens (dark) */
+  --code-surface: #0f141d;
+  --code-chrome: #0a0e17;
+  --code-text: #cbd5e1;
+  --code-comment: #64748b;
+  --code-keyword: #2dd4bf;
+  --code-ident: #60a5fa;
+  --code-string: #6ee7b7;
+  color-scheme: dark;
+}
+
+/* ===========================================================================
+   Base layer — things utilities don't cover cleanly.
+   =========================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    transition: background 180ms ease, color 180ms ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-contrast);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ===========================================================================
+   Reveal-on-scroll utility (driven by the useReveal hook).
+   =========================================================================== */
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 600ms ease, transform 600ms cubic-bezier(0.2, 0.6, 0.2, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c0e13" media="(prefers-color-scheme: dark)" />
+
+    <title>Brantley Wyche — Frontend Software Engineer</title>
+    <meta
+      name="description"
+      content="Brantley Wyche is a frontend software engineer with five years of experience building fast, accessible web apps with React, TypeScript, and Angular."
+    />
+    <meta name="author" content="Brantley Wyche" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Brantley Wyche — Frontend Software Engineer" />
+    <meta
+      property="og:description"
+      content="Five years building enterprise web apps — React, TypeScript, design systems, and accessible UI at scale."
+    />
+    <!-- NOTE: og:image must become an absolute URL (https://yourdomain/og-image.png)
+         once the site is deployed — scrapers ignore relative paths. -->
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Brantley Wyche",
+        "jobTitle": "Frontend Software Engineer",
+        "email": "mailto:brantleywyche24@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "West Orange",
+          "addressRegion": "NJ"
+        },
+        "knowsAbout": [
+          "React",
+          "TypeScript",
+          "Angular",
+          "Design Systems",
+          "Web Accessibility"
+        ]
+      }
+    </script>
+
+    <!-- Set theme before first paint to avoid a flash of the wrong theme -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme =
+            stored ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
