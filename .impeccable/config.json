@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "codex-grid-background",
+        "value": "*",
+        "files": [
+          "src/index.css"
+        ],
+        "createdAt": "2026-09-12T20:59:18.702Z",
+        "reason": "User confirmed the notebook, graph-paper, and tape identity. The shared graph-paper surface is intentionally used for project blueprint sketches and the notebook contact sheet; keep this rule active in other files."
+      }
+    ]
+  }
+}

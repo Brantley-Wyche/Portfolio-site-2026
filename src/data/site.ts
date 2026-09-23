@@ -1,21 +1,15 @@
-// -----------------------------------------------------------------------------
-// Single source of truth for personal / contact info.
-// Update these values and they propagate across the whole site.
-// -----------------------------------------------------------------------------
-
+/** Identity shared by the page, metadata, and structured data. */
 export const site = {
   name: 'Brantley Wyche',
   role: 'Frontend Software Engineer',
   location: 'West Orange, NJ',
+  locality: 'West Orange',
+  region: 'NJ',
   email: 'brantleywyche24@gmail.com',
   resumeUrl: '/Brantley-Wyche-Resume.pdf',
-
-  // TODO: drop in your real profile URLs (leave blank to hide the link).
   github: '',
   linkedin: '',
-
-  shortBio:
-    'Frontend engineer building accessible interfaces, maintainable systems, and thoughtful experiences for complex products.',
+  shortBio: 'I build accessible interfaces and maintainable systems at M&T Bank.',
+  description: 'Brantley Wyche is a frontend software engineer building accessible interfaces and maintainable systems. Explore his experience and résumé.',
+  availability: 'Open to frontend engineering opportunities in NYC and New Jersey.',
 } as const;
-
-export type Site = typeof site;

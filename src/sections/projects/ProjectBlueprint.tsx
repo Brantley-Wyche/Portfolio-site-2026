@@ -1,4 +1,4 @@
-import type { ProjectVisualKind } from '../data/projects';
+import type { ProjectVisualKind } from '../../data/projects';
 
 function ArchitectureDrawing() {
   return (
@@ -59,25 +59,20 @@ function WorkflowDrawing() {
   );
 }
 
-export function ProjectBlueprint({ kind, featured = false }: { kind: ProjectVisualKind; featured?: boolean }) {
+export function ProjectBlueprint({ kind }: { kind: ProjectVisualKind }) {
   return (
     <div
       aria-hidden="true"
-      className={`graph-paper relative w-full overflow-hidden text-accent ${
-        featured ? 'min-h-[20rem] flex-1 max-[720px]:min-h-[15rem]' : 'min-h-[11rem]'
-      }`}
+      className="graph-paper project-blueprint"
     >
-      <span className="absolute left-4 top-4 z-[1] font-mono text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-accent">
+      <span className="blueprint-caption">
         Fig. {kind === 'architecture' ? '01 / System map' : kind === 'interface' ? '02 / Interface' : '03 / Flow'}
       </span>
-      <div className="absolute inset-0 grid place-items-center p-3 opacity-90 transition duration-500 group-hover:scale-[1.015] group-hover:opacity-100">
+      <div className="blueprint-drawing">
         {kind === 'architecture' && <ArchitectureDrawing />}
         {kind === 'interface' && <InterfaceDrawing />}
         {kind === 'workflow' && <WorkflowDrawing />}
       </div>
-      <span className="absolute bottom-3 right-4 font-mono text-[0.58rem] uppercase tracking-[0.15em] text-faint">
-        Selected work
-      </span>
     </div>
   );
 }

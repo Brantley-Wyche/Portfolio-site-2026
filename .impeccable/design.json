@@ -1,0 +1,405 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-13T01:20:59.564Z",
+  "title": "Design System: Brantley Wyche Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Primary",
+        "tonalRamp": [
+          "oklch(15% 0.0860 183.1)",
+          "oklch(26% 0.0860 183.1)",
+          "oklch(37% 0.0860 183.1)",
+          "oklch(48% 0.0860 183.1)",
+          "oklch(59% 0.0860 183.1)",
+          "oklch(70% 0.0860 183.1)",
+          "oklch(81% 0.0860 183.1)",
+          "oklch(95% 0.0860 183.1)"
+        ]
+      },
+      "primary-strong": {
+        "role": "primary",
+        "displayName": "Primary Strong",
+        "tonalRamp": [
+          "oklch(15% 0.0729 184.4)",
+          "oklch(26% 0.0729 184.4)",
+          "oklch(37% 0.0729 184.4)",
+          "oklch(48% 0.0729 184.4)",
+          "oklch(59% 0.0729 184.4)",
+          "oklch(70% 0.0729 184.4)",
+          "oklch(81% 0.0729 184.4)",
+          "oklch(95% 0.0729 184.4)"
+        ]
+      },
+      "primary-soft": {
+        "role": "primary",
+        "displayName": "Primary Soft",
+        "tonalRamp": [
+          "oklch(15% 0.0141 155.6)",
+          "oklch(26% 0.0141 155.6)",
+          "oklch(37% 0.0141 155.6)",
+          "oklch(48% 0.0141 155.6)",
+          "oklch(59% 0.0141 155.6)",
+          "oklch(70% 0.0141 155.6)",
+          "oklch(81% 0.0141 155.6)",
+          "oklch(95% 0.0141 155.6)"
+        ]
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "Background",
+        "tonalRamp": [
+          "oklch(15% 0.0127 86.8)",
+          "oklch(26% 0.0127 86.8)",
+          "oklch(37% 0.0127 86.8)",
+          "oklch(48% 0.0127 86.8)",
+          "oklch(59% 0.0127 86.8)",
+          "oklch(70% 0.0127 86.8)",
+          "oklch(81% 0.0127 86.8)",
+          "oklch(95% 0.0127 86.8)"
+        ]
+      },
+      "background-subtle": {
+        "role": "neutral",
+        "displayName": "Background Subtle",
+        "tonalRamp": [
+          "oklch(15% 0.0165 79.4)",
+          "oklch(26% 0.0165 79.4)",
+          "oklch(37% 0.0165 79.4)",
+          "oklch(48% 0.0165 79.4)",
+          "oklch(59% 0.0165 79.4)",
+          "oklch(70% 0.0165 79.4)",
+          "oklch(81% 0.0165 79.4)",
+          "oklch(95% 0.0165 79.4)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0069 88.6)",
+          "oklch(26% 0.0069 88.6)",
+          "oklch(37% 0.0069 88.6)",
+          "oklch(48% 0.0069 88.6)",
+          "oklch(59% 0.0069 88.6)",
+          "oklch(70% 0.0069 88.6)",
+          "oklch(81% 0.0069 88.6)",
+          "oklch(95% 0.0069 88.6)"
+        ]
+      },
+      "graph": {
+        "role": "neutral",
+        "displayName": "Graph",
+        "tonalRamp": [
+          "oklch(15% 0.0080 98.9)",
+          "oklch(26% 0.0080 98.9)",
+          "oklch(37% 0.0080 98.9)",
+          "oklch(48% 0.0080 98.9)",
+          "oklch(59% 0.0080 98.9)",
+          "oklch(70% 0.0080 98.9)",
+          "oklch(81% 0.0080 98.9)",
+          "oklch(95% 0.0080 98.9)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0200 248.8)",
+          "oklch(26% 0.0200 248.8)",
+          "oklch(37% 0.0200 248.8)",
+          "oklch(48% 0.0200 248.8)",
+          "oklch(59% 0.0200 248.8)",
+          "oklch(70% 0.0200 248.8)",
+          "oklch(81% 0.0200 248.8)",
+          "oklch(95% 0.0200 248.8)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.0211 235.0)",
+          "oklch(26% 0.0211 235.0)",
+          "oklch(37% 0.0211 235.0)",
+          "oklch(48% 0.0211 235.0)",
+          "oklch(59% 0.0211 235.0)",
+          "oklch(70% 0.0211 235.0)",
+          "oklch(81% 0.0211 235.0)",
+          "oklch(95% 0.0211 235.0)"
+        ]
+      },
+      "faint": {
+        "role": "neutral",
+        "displayName": "Faint",
+        "tonalRamp": [
+          "oklch(15% 0.0216 227.7)",
+          "oklch(26% 0.0216 227.7)",
+          "oklch(37% 0.0216 227.7)",
+          "oklch(48% 0.0216 227.7)",
+          "oklch(59% 0.0216 227.7)",
+          "oklch(70% 0.0216 227.7)",
+          "oklch(81% 0.0216 227.7)",
+          "oklch(95% 0.0216 227.7)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Border",
+        "tonalRamp": [
+          "oklch(15% 0.0209 81.8)",
+          "oklch(26% 0.0209 81.8)",
+          "oklch(37% 0.0209 81.8)",
+          "oklch(48% 0.0209 81.8)",
+          "oklch(59% 0.0209 81.8)",
+          "oklch(70% 0.0209 81.8)",
+          "oklch(81% 0.0209 81.8)",
+          "oklch(95% 0.0209 81.8)"
+        ]
+      },
+      "border-strong": {
+        "role": "neutral",
+        "displayName": "Border Strong",
+        "tonalRamp": [
+          "oklch(15% 0.0239 78.2)",
+          "oklch(26% 0.0239 78.2)",
+          "oklch(37% 0.0239 78.2)",
+          "oklch(48% 0.0239 78.2)",
+          "oklch(59% 0.0239 78.2)",
+          "oklch(70% 0.0239 78.2)",
+          "oklch(81% 0.0239 78.2)",
+          "oklch(95% 0.0239 78.2)"
+        ]
+      },
+      "note": {
+        "role": "secondary",
+        "displayName": "Note",
+        "tonalRamp": [
+          "oklch(15% 0.0817 90.5)",
+          "oklch(26% 0.0817 90.5)",
+          "oklch(37% 0.0817 90.5)",
+          "oklch(48% 0.0817 90.5)",
+          "oklch(59% 0.0817 90.5)",
+          "oklch(70% 0.0817 90.5)",
+          "oklch(81% 0.0817 90.5)",
+          "oklch(95% 0.0817 90.5)"
+        ]
+      },
+      "tape": {
+        "role": "secondary",
+        "displayName": "Tape",
+        "tonalRamp": [
+          "oklch(15% 0.0812 177.2)",
+          "oklch(26% 0.0812 177.2)",
+          "oklch(37% 0.0812 177.2)",
+          "oklch(48% 0.0812 177.2)",
+          "oklch(59% 0.0812 177.2)",
+          "oklch(70% 0.0812 177.2)",
+          "oklch(81% 0.0812 177.2)",
+          "oklch(95% 0.0812 177.2)"
+        ]
+      },
+      "on-primary": {
+        "role": "neutral",
+        "displayName": "On Primary",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.9)",
+          "oklch(26% 0.0000 89.9)",
+          "oklch(37% 0.0000 89.9)",
+          "oklch(48% 0.0000 89.9)",
+          "oklch(59% 0.0000 89.9)",
+          "oklch(70% 0.0000 89.9)",
+          "oklch(81% 0.0000 89.9)",
+          "oklch(95% 0.0000 89.9)"
+        ]
+      },
+      "note-border": {
+        "role": "neutral",
+        "displayName": "Note border",
+        "tonalRamp": [
+          "oklch(15% 0.0951 92.3)",
+          "oklch(26% 0.0951 92.3)",
+          "oklch(37% 0.0951 92.3)",
+          "oklch(48% 0.0951 92.3)",
+          "oklch(59% 0.0951 92.3)",
+          "oklch(70% 0.0951 92.3)",
+          "oklch(81% 0.0951 92.3)",
+          "oklch(95% 0.0951 92.3)"
+        ]
+      },
+      "tape-shadow": {
+        "role": "neutral",
+        "displayName": "Tape shadow",
+        "tonalRamp": [
+          "oklch(15% 0.0459 178.3)",
+          "oklch(26% 0.0459 178.3)",
+          "oklch(37% 0.0459 178.3)",
+          "oklch(48% 0.0459 178.3)",
+          "oklch(59% 0.0459 178.3)",
+          "oklch(70% 0.0459 178.3)",
+          "oklch(81% 0.0459 178.3)",
+          "oklch(95% 0.0459 178.3)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Literata 600 with optical sizing for the personal name on the notebook opening page."
+      },
+      "label": {
+        "displayName": "Field label",
+        "purpose": "Short mono metadata at readable sizes."
+      },
+      "diagram-annotation": {
+        "displayName": "Decorative diagram annotation",
+        "purpose": "11px in SVG coordinates, confined to aria-hidden project drawings. Never used for readable UI labels."
+      },
+      "toolkit-title": {
+        "displayName": "Toolkit note heading",
+        "purpose": "Caveat 600 handwriting shared by approach and toolkit note headings and the contact location note."
+      }
+    },
+    "shadows": [
+      {
+        "name": "paper",
+        "value": "0 2px 4px rgb(58 47 29 / 4%), 0 8px 18px rgb(58 47 29 / 4%)",
+        "purpose": "Subtle paper depth."
+      },
+      {
+        "name": "note",
+        "value": "0 4px 12px rgb(79 61 24 / 8%), 0 12px 26px rgb(79 61 24 / 6%)",
+        "purpose": "Lifted yellow notes."
+      },
+      {
+        "name": "tape",
+        "value": "0 2px 4px rgb(35 73 65 / 10%)",
+        "purpose": "Small material shadow under decorative tape."
+      }
+    ],
+    "motion": [
+      {
+        "name": "intro",
+        "value": "400ms ease-out; opacity and translateY(6px) to rest",
+        "purpose": "One initial introduction; disabled with reduced motion."
+      },
+      {
+        "name": "button-state",
+        "value": "160ms ease",
+        "purpose": "Button color changes; disabled with reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-header",
+        "value": "30rem viewport"
+      },
+      {
+        "name": "hero-columns",
+        "value": "40rem container"
+      },
+      {
+        "name": "navigation-experience",
+        "value": "48rem container"
+      },
+      {
+        "name": "principles-toolkit",
+        "value": "51rem container"
+      },
+      {
+        "name": "hero-margin-contact",
+        "value": "56rem container"
+      },
+      {
+        "name": "hero-evidence-rows",
+        "value": "18rem container"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main action in the current section.",
+      "html": "<a class=\"ds-button\" href=\"/Brantley-Wyche-Resume.pdf\" download>Résumé</a>",
+      "css": ".ds-button { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0.7rem 1.1rem; border:1px solid transparent; border-radius:9px; background:var(--accent, #087166); color:#fff; font:600 15.2px/1.4 'IBM Plex Sans',system-ui,sans-serif; text-decoration:none; transition:background-color 160ms ease; } .ds-button:hover { background:var(--accent-strong, #075b53); } .ds-button:active { background:var(--accent-strong, #075b53);color:#fff; } .ds-button:focus-visible {outline:3px solid var(--accent, #087166);outline-offset:4px;} @media(prefers-reduced-motion:reduce){.ds-button{transition:none;}}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A supporting résumé action.",
+      "html": "<a class=\"ds-button\" href=\"#experience\">Download résumé</a>",
+      "css": ".ds-button { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0.7rem 1.1rem; border:1px solid var(--border-strong, #b8ae9f); border-radius:9px; background:var(--surface, #fffdf8); color:var(--text, #101820); font:600 15.2px/1.4 'IBM Plex Sans',system-ui,sans-serif; text-decoration:none; transition:background-color 160ms ease; } .ds-button:hover { background:var(--accent-soft, #e5efe8); } .ds-button:active { background:var(--accent-strong, #075b53);color:#fff; } .ds-button:focus-visible {outline:3px solid var(--accent, #087166);outline-offset:4px;} @media(prefers-reduced-motion:reduce){.ds-button{transition:none;}}"
+    },
+    {
+      "name": "Paper Card",
+      "kind": "card",
+      "refersTo": "paper-card",
+      "description": "A quiet surface for career evidence.",
+      "html": "<div class=\"ds-paper\"><h3>Software Engineer</h3><p>Clear evidence, readable detail.</p></div>",
+      "css": ".ds-paper{padding:24px;border:1px solid var(--border,#ddd5c7);border-radius:12px;background:var(--surface,#fffdf8);color:var(--text,#101820);box-shadow:0 2px 4px rgb(58 47 29 / 4%),0 8px 18px rgb(58 47 29 / 4%);font:16px/1.65 'IBM Plex Sans',system-ui,sans-serif}.ds-paper h3{margin:0;font:600 24px/1.15 Literata,Georgia,serif}.ds-paper p{margin:12px 0 0;color:var(--text-muted,#45525a)}"
+    },
+    {
+      "name": "Taped Note",
+      "kind": "card",
+      "refersTo": "note-card",
+      "description": "Selective notebook character for working principles.",
+      "html": "<div class=\"ds-note\"><span class=\"ds-tape\" aria-hidden=\"true\"></span><h3>Build for the long term</h3><p>Accessibility and reusable patterns belong in the foundation.</p></div>",
+      "css": ".ds-note{position:relative;margin-top:12px;padding:28px 24px 24px;border:1px solid #dcc57d;border-radius:3px;background:var(--note,#f3dda0);box-shadow:0 4px 12px rgb(79 61 24 / 8%),0 12px 26px rgb(79 61 24 / 6%);color:var(--text,#101820);font:16px/1.6 'IBM Plex Sans',system-ui,sans-serif}.ds-note h3{margin:0;padding-bottom:12px;border-bottom:1px solid #dcc57d;font:600 28px/1.3 Caveat,\"Segoe Print\",cursive}.ds-note p{margin:12px 0 0;color:var(--text-muted,#45525a)}.ds-tape{position:absolute;top:-11px;right:24px;width:72px;height:22px;transform:rotate(5deg);background:color-mix(in srgb,var(--tape,#4b9887) 80%,transparent);pointer-events:none;}"
+    },
+    {
+      "name": "Graph Paper",
+      "kind": "custom",
+      "description": "A restrained ground for diagrams and contact.",
+      "html": "<div class=\"ds-graph\"><svg width=\"220\" height=\"100\" viewBox=\"0 0 220 100\" aria-hidden=\"true\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"15\" y=\"20\" width=\"70\" height=\"60\" rx=\"5\"/><rect x=\"135\" y=\"30\" width=\"70\" height=\"40\" rx=\"5\"/><path d=\"M85 50h50m-8-6 8 6-8 6\"/></g></svg></div>",
+      "css": ".ds-graph{padding:24px;border:1px solid var(--border-strong,#b8ae9f);border-radius:9px;background-color:#fbfaf4;background-image:linear-gradient(rgb(8 113 102 / 8%) 1px,transparent 1px),linear-gradient(90deg,rgb(8 113 102 / 8%) 1px,transparent 1px);background-size:24px 24px;color:var(--accent,#087166)}.ds-graph svg{max-width:100%;height:auto}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Compact paper navigation with a clear résumé path.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#top\">BW</a><a href=\"#experience\">Experience</a><a href=\"#projects\">Work</a><a class=\"ds-resume\" href=\"#resume\">Résumé</a></nav>",
+      "css": ".ds-nav{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:12px;background:var(--bg,#f7f3ea);border-bottom:1px solid var(--border,#ddd5c7);font:600 14px/1.4 'IBM Plex Sans',system-ui,sans-serif}.ds-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;color:var(--text,#101820);text-decoration:none}.ds-nav .ds-brand{border:1px solid var(--text,#101820);background:var(--surface,#fffdf8);box-shadow:3px 3px 0 var(--accent,#087166)}.ds-nav .ds-resume{background:var(--accent,#087166);color:#fff;border-radius:9px}.ds-nav a:hover{text-decoration:underline}.ds-nav a:focus-visible{outline:3px solid var(--accent,#087166);outline-offset:4px}"
+    },
+    {
+      "name": "Toolkit Note",
+      "kind": "card",
+      "description": "White taped notes with handwritten headings and medium-weight ink lists; a grid makes all three notes match the tallest content.",
+      "html": "<div class=\"ds-toolkit\"><span class=\"ds-tape\" aria-hidden=\"true\"></span><h3>Interface craft</h3><p>Deep experience</p><ul><li>SCSS / SASS</li><li>Design Systems</li><li>Accessibility (WCAG)</li></ul></div>",
+      "css": ".ds-toolkit{position:relative;margin-top:12px;padding:28px 24px 24px;border:1px solid #ddd5c7;border-radius:3px;background:#fffdf8;color:#101820;box-shadow:0 2px 4px rgb(58 47 29 / 4%),0 8px 18px rgb(58 47 29 / 4%)}.ds-toolkit h3{margin:0;padding-bottom:12px;border-bottom:1px solid #ddd5c7;font:600 28px/1.3 Caveat,\"Segoe Print\",cursive}.ds-toolkit p{margin:20px 0 8px;font:500 12px/1.6 \"JetBrains Mono\",monospace;letter-spacing:.06em;text-transform:uppercase;color:#526168}.ds-toolkit ul{display:flex;flex-wrap:wrap;gap:6px 16px;margin:0;padding:0;list-style:none;font:500 16px/1.65 \"IBM Plex Sans\",system-ui,sans-serif}.ds-tape{position:absolute;top:-11px;left:24px;width:72px;height:22px;transform:rotate(-5deg);background:color-mix(in srgb,#4b9887 80%,transparent);pointer-events:none}"
+    },
+    {
+      "name": "Contact Entry",
+      "kind": "custom",
+      "description": "Dark-ink email with a text-only underline on each wrapped line and an inline arrow beside the address.",
+      "html": "<div class=\"ds-contact\"><a class=\"ds-email\" href=\"mailto:brantleywyche24@gmail.com\"><small>Send an email</small><span class=\"ds-address\"><strong>brantleywyche24</strong><wbr><span class=\"ds-tail\"><strong>@gmail.com</strong><span class=\"ds-arrow\" aria-hidden=\"true\">↗</span></span></span></a><a class=\"ds-resume\" href=\"/Brantley-Wyche-Resume.pdf\" download>Download résumé ↓</a></div>",
+      "css": ".ds-contact{--grid:1.5rem;padding:var(--grid);background-color:#fbfaf4;background-image:linear-gradient(rgb(8 113 102 / 8%) 1px,transparent 1px),linear-gradient(90deg,rgb(8 113 102 / 8%) 1px,transparent 1px);background-size:var(--grid) var(--grid);font-family:\"IBM Plex Sans\",system-ui,sans-serif}.ds-email{display:block;width:fit-content;max-width:100%;min-height:48px;text-decoration:none;color:#101820}.ds-email small{display:block;font:500 .75rem/var(--grid) \"JetBrains Mono\",monospace;letter-spacing:.06em;text-transform:uppercase;color:#526168}.ds-address{position:relative;top:.25rem;display:block;font-size:1.25rem;line-height:var(--grid);overflow-wrap:anywhere}.ds-address strong{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:0}.ds-arrow{display:inline-block;margin-left:.4em}.ds-resume{display:flex;align-items:center;min-height:44px;margin-top:8px;color:#087166;font-size:.9rem;font-weight:600;text-underline-offset:.22em}.ds-contact a:hover,.ds-contact a:active{color:#075b53}.ds-contact a:focus-visible{outline:3px solid #087166;outline-offset:4px;border-radius:4px}.ds-tail{display:inline-block;max-width:100%;vertical-align:top}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Engineer’s Notebook",
+    "overview": "A professional engineer’s notebook: warm paper, dark ink, restrained teal, and a few taped notes. The material details give the portfolio a recognizable identity while the typography and spacing keep career evidence easy to scan.",
+    "keyCharacteristics": [
+      "Warm paper and subtle graph lines",
+      "Clear, compact typographic hierarchy",
+      "Selective tape and soft paper shadows",
+      "Visible content with restrained motion"
+    ],
+    "rules": [],
+    "dos": [
+      "Do preserve the notebook, graph-paper, and tape identity.",
+      "Do keep useful body copy at 1rem and supporting labels at least 0.75rem.",
+      "Do let content reflow at narrow widths and enlarged text sizes.",
+      "Do keep focus visible and standalone controls at least 44px in both dimensions."
+    ],
+    "donts": [
+      "Don’t add hover movement to passive cards, statistics, or illustrations.",
+      "Don’t hide sections behind scroll-reveal observers.",
+      "Don’t shrink or truncate important content to force it into a fixed layout.",
+      "Don’t replace intentionally unfinished projects with invented case studies."
+    ]
+  }
+}

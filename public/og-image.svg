@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="paper" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 0h4" stroke="#ded8cd" stroke-opacity=".23"/></pattern>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0v24" fill="none" stroke="#087166" stroke-opacity=".12"/></pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#f7f3ea"/>
+  <rect width="1200" height="630" fill="url(#paper)"/>
+  <rect x="75" y="79" width="56" height="56" fill="#087166"/>
+  <rect x="70" y="74" width="56" height="56" fill="#fffdf8" stroke="#101820" stroke-width="2"/>
+  <g transform="translate(82 87)" fill="none" stroke="#101820" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M0 0v25h8c10 0 10-13 0-13H0m8 0C18 12 18 0 8 0H0"/>
+    <path d="m19 0 4 25 6-17 6 17 4-25"/>
+  </g>
+  <g font-family="Segoe UI, sans-serif">
+    <text x="155" y="100" font-size="25" font-weight="600" fill="#101820">Brantley Wyche</text>
+    <text x="155" y="128" font-size="18" fill="#45525a">Frontend Software Engineer</text>
+    <text x="70" y="285" font-size="64" font-weight="700" letter-spacing="-2" fill="#101820">Complex frontend.</text>
+    <text x="70" y="360" font-size="64" font-weight="700" letter-spacing="-2" fill="#087166">Clear thinking.</text>
+    <text x="73" y="427" font-size="23" fill="#45525a">Accessible interfaces. Maintainable systems.</text>
+    <path d="M70 502h1060" stroke="#b8ae9f"/>
+    <text x="73" y="548" font-size="18" font-weight="600" fill="#087166">EXPERIENCE / SELECTED WORK</text>
+    <text x="1125" y="548" text-anchor="end" font-size="18" fill="#526168">NYC / NEW JERSEY</text>
+  </g>
+  <g transform="translate(782 200) rotate(2 165 120)">
+    <rect x="4" y="7" width="340" height="242" rx="10" fill="#ddd5c7" opacity=".45"/>
+    <rect width="340" height="242" rx="10" fill="#fffdf8" stroke="#b8ae9f"/>
+    <rect width="340" height="242" rx="10" fill="url(#grid)"/>
+    <rect x="224" y="-10" width="85" height="25" transform="rotate(5 265 0)" fill="#4b9887" opacity=".8"/>
+    <g stroke="#087166" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="33" y="66" width="145" height="111" rx="6"/>
+      <path d="M33 89h145M47 78h3m8 0h3m8 0h3"/>
+      <rect x="49" y="106" width="39" height="48" rx="3"/>
+      <path d="M104 110h55m-55 16h39m-39 16h49"/>
+      <rect x="228" y="105" width="80" height="45" rx="5"/>
+      <path d="M178 122h50m-8-7 8 7-8 7M242 119h49m-49 15h32"/>
+    </g>
+  </g>
+</svg>

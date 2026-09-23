@@ -42,12 +42,6 @@ export const Download = ({ size = 18, className }: IconProps) => (
   </svg>
 );
 
-export const Folder = ({ size = 18, className }: IconProps) => (
-  <svg {...base(size)} className={className}>
-    <path d="M4 20a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5l2 2.5h7a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2Z" />
-  </svg>
-);
-
 export const Menu = ({ size = 18, className }: IconProps) => (
   <svg {...base(size)} className={className}>
     <path d="M4 7h16M4 12h16M4 17h16" />

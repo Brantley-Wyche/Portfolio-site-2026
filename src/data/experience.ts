@@ -15,12 +15,10 @@ export const experience: Role[] = [
     period: 'Jul 2022 — Present',
     current: true,
     highlights: [
-      'Build and maintain a large Angular account-management platform used by employees across branch locations.',
-      'Led the application migration from Angular 16 to 21, coordinating the deployment timeline across 8 development teams, management, and Product Owners.',
-      'Modernized the frontend with standalone components, an in-house design system, and signal-based state management.',
-      'Authored deprecation guides and implementation standards to support consistent adoption of modern patterns.',
-      'Hardened CI/CD pipelines, upgraded Node.js base images, and maintained Jasmine/Karma tests.',
-      'Mentor junior engineers and contribute to a community of practice around evolving frontend standards.',
+      'Build and maintain the Angular account-management platform used across bank branches.',
+      'Led the Angular 16 → 21 migration, coordinating delivery across 8 development teams.',
+      'Modernized the frontend with standalone components, signals, and an in-house design system.',
+      'Strengthen CI/CD and testing; write implementation guides and mentor junior engineers.',
     ],
   },
   {
@@ -29,8 +27,7 @@ export const experience: Role[] = [
     location: 'Buffalo, NY',
     period: 'Jun 2021 — Aug 2021',
     highlights: [
-      'Co-developed an internal document viewer that delivered more than $1M in annual savings by eliminating external licensing fees.',
-      'Worked within an Agile team to gather requirements and ship core functionality to bank quality and operational standards.',
+      'Co-developed an internal document viewer that eliminated external licensing fees, saving more than $1M annually.',
     ],
   },
 ];
