@@ -19,6 +19,22 @@ colors:
   tape: "#4b9887"
   tape-shadow: "rgb(35 73 65 / 10%)"
   on-primary: "#ffffff"
+  highlighter: "#f7dc6f"
+  # Blueprint theme (dark). Notes, note borders, and tape keep their paper values.
+  blueprint-background: "#0f2f4d"
+  blueprint-background-subtle: "#0c2842"
+  blueprint-surface: "#143a5e"
+  blueprint-graph: "#123759"
+  blueprint-ink: "#eef4f9"
+  blueprint-muted: "#c3d3e0"
+  blueprint-faint: "#a8bccd"
+  blueprint-border: "#2c5479"
+  blueprint-border-strong: "#4b7295"
+  blueprint-primary: "#7fd6c9"
+  blueprint-primary-strong: "#a8e7de"
+  blueprint-primary-soft: "#1b4a69"
+  blueprint-on-primary: "#0f2f4d"
+  blueprint-highlighter: "rgb(127 214 201 / 30%)"
 typography:
   display:
     fontFamily: "Literata, Georgia, Times New Roman, serif"
@@ -117,6 +133,8 @@ rounded:
   note: "3px"
   control: "9px"
   paper: "12px"
+  # Uneven ends, like a marker stroke.
+  highlighter: "0.12em 0.3em 0.18em 0.35em"
 spacing:
   small: "0.75rem"
   medium: "1rem"
@@ -157,6 +175,8 @@ A professional engineer’s notebook: warm paper, dark ink, restrained teal, and
 - Clear, compact typographic hierarchy
 - Selective tape and soft paper shadows
 - Visible content with restrained motion
+- One marker color for selection, arrival, and "you are here"
+- A cyanotype blueprint theme for dark mode
 
 ## Colors
 
@@ -164,13 +184,17 @@ Teal supplies emphasis and interaction; warm neutrals carry the page. Dark ink i
 
 Primary button text uses on-primary; normal text and small teal links must maintain at least 4.5:1 contrast. Borders and graph lines are structural or decorative, never the only label for an action.
 
+The highlighter is the notebook's one marker color. It marks text selection, the heading of a section reached by link, and the current section in the navigation. Selections on yellow notes use a green highlighter so they stay visible.
+
+**Blueprint theme.** Dark mode turns the notebook into a cyanotype blueprint: deep blue paper, lighter blue sheets for cards, white ink, and light teal linework and links. The theme follows the system setting until the visitor chooses one with the header toggle; the choice is saved and applied before first paint. Each color token holds both values through `light-dark()`. Yellow notes, their borders, and tape are physical paper in both themes, so notes switch their contents back to the paper palette. The highlighter becomes translucent teal, because translucent yellow over blue turns olive. Every sampled text pair in the blueprint theme measures at least 5.98:1.
+
 ## Typography
 
 Literata gives headings and evidence values a printed-book character. IBM Plex Sans carries readable prose and controls, with its natural spacing and 1.65 body line height. JetBrains Mono is reserved for short field labels and identity metadata. Caveat gives the approach and toolkit note headings and the contact location note a consistent handwritten voice; important body copy remains in IBM Plex Sans. Toolkit entries use 500 weight and dark ink for clear separation from their smaller proficiency labels. Literata uses automatic optical sizing across its 7–72 range; load only its 600 weight, the 400, 500, and 600 weights used by IBM Plex Sans, and JetBrains Mono 500.
 
 Body copy uses the body role. Supporting dates and evidence labels are 0.875rem; field labels use the label role. Headings balance lines and may wrap long words rather than overflow. Use -0.03em tracking for the large name and -0.02em for headings; keep body text at normal tracking. Fonts load with swap and system fallbacks.
 
-Contact uses a shared 1.5rem graph row for spacing and leading: its heading spans two rows, while each description, label, and email line spans one. The address has a 0.25rem optical baseline offset so the ink sits on the ruling. Card padding starts text on grid intersections, including the narrower one-cell mobile gutter. The graph scales with enlarged text.
+Contact uses a shared 1.5rem graph row for spacing and leading: its heading spans two rows, while each description and email line spans one. The address has a 0.25rem optical baseline offset so the ink sits on the ruling. The email link and Copy button keep 44px targets through inline padding and negative margins, so neither pushes the address off the ruling. Card padding starts text on grid intersections, including the narrower one-cell mobile gutter. The graph scales with enlarged text.
 
 The diagram-annotation role is confined to decorative text inside the project SVG sketches, which are hidden from assistive technology and scale with the drawing. Its size is set in SVG user units so it renders near 11px at current card widths; a CSS pixel size would shrink with the drawing to an unreadable 5px. It carries no project information or controls. It is not a size option for readable UI labels, which retain the label role above.
 
@@ -178,9 +202,11 @@ The diagram-annotation role is confined to decorative text inside the project SV
 
 One container aligns the header and all sections: maximum 70rem with 16–32px side gutters. Sections use 2.75–4rem vertical padding; the hero uses 2.5rem above and below. Shared headings separate from content by 1.75rem.
 
-Container queries respond to available space and rem-based text scale: the hero introduction and career evidence split at 40rem; navigation and experience split at 48rem; principles and toolkit become three columns at 51rem; the hero gains a narrow notebook margin and contact splits at 56rem. Below these widths, content stacks. Project cards use an auto-fitting grid with a shrinkable 17rem minimum.
+Container queries respond to available space and rem-based text scale: the navigation links replace the menu at 36rem, with the name beside the monogram from 44rem; the hero introduction and career evidence split at 40rem; experience splits at 48rem; principles and toolkit become three columns at 51rem; the hero gains a narrow notebook margin and contact splits at 56rem. Below these widths, content stacks. Project cards use an auto-fitting grid with a shrinkable 17rem minimum.
 
-On viewports below 40rem, nested cards use 20px padding to retain reading space. Below 30rem, the header retains its monogram, résumé, and menu button. Education shows the degree, school, and location without dates.
+On viewports below 40rem, nested cards use 20px padding to retain reading space. Below 30rem, the header retains its monogram, theme toggle, résumé, and menu button. Education shows the degree, school, and location without dates.
+
+Printed or saved as PDF, the page always uses the paper palette on white: no header, tape, shadows, graph backgrounds, highlights, handwritten hints, or résumé and copy actions. Placeholder-only projects are left out. Cards avoid splitting across pages.
 
 ## Elevation & Depth
 
@@ -198,13 +224,15 @@ Paper cards have gently curved corners, controls and graph surfaces slightly tig
 - **Experience:** plain white paper cards without tape; the evidence carries the section.
 - **Education:** a distinct white paper panel with a clear degree heading. Its label and degree align with the career-card columns on wide screens and stack below 48rem. No dates or duplicate résumé action.
 - **ButtonLink:** native anchors, primary and secondary variants, 48px minimum height; small header variant 44px. Darker teal on primary hover/active, tinted paper on secondary hover. Focus uses a 3px teal outline with 4px offset.
-- **Navigation:** paper header, normal anchor links, always-visible résumé. The mobile disclosure focuses Experience on opening, closes on Escape with focus restored, and closes when a link is followed or the desktop layout becomes active.
+- **Navigation:** paper header, normal anchor links, a blueprint theme toggle (a pressed/unpressed button), and an always-visible résumé. The section being read is highlighted with the marker and exposed as `aria-current="location"`; it is the last linked section whose top has passed 35% of the viewport, so Toolkit keeps Approach marked and the page bottom marks Contact. The mobile disclosure focuses Experience on opening, closes on Escape with focus restored, and closes when a link is followed or the desktop layout becomes active.
+- **Section arrival:** following a link to a section, including a link opened from elsewhere, sweeps the marker behind that section's heading once the scroll lands.
+- **Margin note:** a short handwritten teal annotation with a drawn arrow. It repeats something already on the page, so it is hidden from assistive technology. Use sparingly; the contact hint is currently the only one.
 - **Paper / graph / note:** shared material primitives. Tape is decorative and cannot intercept pointer input. Project illustrations preserve aspect ratio; the full cards stay passive.
 - **Project cards:** taped figures; tape alternates left and right by position. Optional descriptions, roles, tags, and external links render only when supplied. Link names include their visible Code or Visit labels. Empty collections retain the Work destination.
 - **Approach and toolkit note headings:** both use the shared handwritten heading and bottom rule. Yellow notes use their warmer border color; white notes use the paper border. Body copy remains in IBM Plex Sans.
 - **Toolkit:** three white notes with handwritten category headings and an ink rule below each heading. Proficiency labels appear once per subgroup, above medium-weight skill lists. When the notes sit side by side, all three share the tallest note's height using flexible grid tracks; stacked notes fit their own content. Content can grow without fixed heights or clipping.
-- **Contact:** graph paper with a prominent dark-ink email entry and a supporting résumé text link. The underline follows the actual text on each wrapped line; an inline arrow follows the address with a 0.4em gap. A zero underline offset keeps the rule on the graph baseline. These native anchors use ink and rules rather than filled button surfaces. The email can break before the domain or within a long word, while its actual text and mailto address remain intact. A smaller taped yellow note carries only the handwritten location, without an extra label. The footer keeps only Back to top beside the copyright.
-- **Motion:** one 400ms entrance on the hero introduction; 160ms button color transitions. Content elsewhere is visible immediately. Reduced motion disables these transitions and smooth scrolling.
+- **Contact:** graph paper with a prominent dark-ink email address, a Copy button beside it, a handwritten "best way to reach me" hint below, and a supporting résumé text link. There is no label above the address. The underline follows the actual text on each wrapped line, and a zero underline offset keeps the rule on the graph baseline. Copy writes the address to the clipboard, swaps its icon for a check, changes the hint to "copied!", and announces the result through a status region; if the clipboard is unavailable, the hint says "select it to copy". Both reset after about 2.4 seconds. These native controls use ink and rules rather than filled button surfaces. The email can break before the domain or within a long word, while its actual text and mailto address remain intact. A smaller taped yellow note carries only the handwritten location, without an extra label. The footer keeps only Back to top beside the copyright.
+- **Motion:** one 400ms entrance on the hero introduction; 160ms button color transitions; a 600ms marker sweep on the heading of a section reached by link, starting after 450ms so the scroll lands first; a 360ms sweep when the navigation highlight moves. Content elsewhere is visible immediately. Reduced motion disables the entrance, transitions, and smooth scrolling, shows the navigation highlight without a sweep, and fades the heading highlight in over 200ms so arrival feedback remains.
 
 ## Do's and Don'ts
 
@@ -218,3 +246,5 @@ Paper cards have gently curved corners, controls and graph surfaces slightly tig
 - Don’t shrink or truncate important content to force it into a fixed layout.
 - Don’t replace intentionally unfinished projects with invented case studies.
 - Don’t tape every card. Tape on everything stops meaning anything, and sticky notes stick on their own.
+- Don’t put a yellow highlighter on blueprint blue; it turns olive.
+- Don’t hard-code a color that differs between themes; give it a `light-dark()` token.

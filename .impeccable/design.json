@@ -293,6 +293,16 @@
         "name": "button-state",
         "value": "160ms ease",
         "purpose": "Button color changes; disabled with reduced motion."
+      },
+      {
+        "name": "highlighter-arrival",
+        "value": "600ms cubic-bezier(0.16, 1, 0.3, 1) after 450ms; scaleX(0) to 1 from the left",
+        "purpose": "Marks the heading of a section reached by link once the scroll lands; fades in over 200ms with reduced motion."
+      },
+      {
+        "name": "nav-highlight",
+        "value": "360ms cubic-bezier(0.16, 1, 0.3, 1); scaleX(0) to 1 from the left",
+        "purpose": "Moves the you-are-here marker to the section being read; appears without a sweep with reduced motion."
       }
     ],
     "breakpoints": [
@@ -305,7 +315,15 @@
         "value": "40rem container"
       },
       {
-        "name": "navigation-experience",
+        "name": "navigation",
+        "value": "36rem container"
+      },
+      {
+        "name": "navigation-name",
+        "value": "44rem container"
+      },
+      {
+        "name": "experience-columns",
         "value": "48rem container"
       },
       {
@@ -365,9 +383,9 @@
     {
       "name": "Navigation",
       "kind": "nav",
-      "description": "Compact paper navigation with a clear résumé path.",
-      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#top\">BW</a><a href=\"#experience\">Experience</a><a href=\"#projects\">Work</a><a class=\"ds-resume\" href=\"#resume\">Résumé</a></nav>",
-      "css": ".ds-nav{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:12px;background:var(--bg,#f7f3ea);border-bottom:1px solid var(--border,#ddd5c7);font:600 14px/1.4 'IBM Plex Sans',system-ui,sans-serif}.ds-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;color:var(--text,#101820);text-decoration:none}.ds-nav .ds-brand{border:1px solid var(--text,#101820);background:var(--surface,#fffdf8);box-shadow:3px 3px 0 var(--accent,#087166)}.ds-nav .ds-resume{background:var(--accent,#087166);color:#fff;border-radius:9px}.ds-nav a:hover{text-decoration:underline}.ds-nav a:focus-visible{outline:3px solid var(--accent,#087166);outline-offset:4px}"
+      "description": "Compact paper navigation with a clear résumé path, a blueprint theme toggle, and a highlighter marking the section being read.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#top\">BW</a><a href=\"#experience\" aria-current=\"location\"><span>Experience</span></a><a href=\"#projects\">Work</a><button class=\"ds-toggle\" type=\"button\" aria-pressed=\"false\" aria-label=\"Blueprint theme\">◐</button><a class=\"ds-resume\" href=\"#resume\">Résumé</a></nav>",
+      "css": ".ds-nav{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:12px;background:var(--bg,#f7f3ea);border-bottom:1px solid var(--border,#ddd5c7);font:600 14px/1.4 'IBM Plex Sans',system-ui,sans-serif}.ds-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;color:var(--text,#101820);text-decoration:none}.ds-nav .ds-brand{border:1px solid var(--text,#101820);background:var(--surface,#fffdf8);box-shadow:3px 3px 0 var(--accent,#087166)}.ds-nav .ds-resume{background:var(--accent,#087166);color:#fff;border-radius:9px}.ds-nav a:hover{text-decoration:underline}.ds-nav a:focus-visible{outline:3px solid var(--accent,#087166);outline-offset:4px}.ds-nav a[aria-current] span{position:relative;z-index:0}.ds-nav a[aria-current] span::before{content:\"\";position:absolute;z-index:-1;left:-.3em;right:-.3em;bottom:.2em;height:.68em;border-radius:.12em .3em .18em .35em;background:#f7dc6f;transform:rotate(-1deg)}.ds-toggle{display:inline-grid;place-items:center;width:44px;height:44px;border:1px solid #b8ae9f;border-radius:8px;background:#fffdf8;color:#101820;font-size:18px}"
     },
     {
       "name": "Toolkit Note",
@@ -379,9 +397,9 @@
     {
       "name": "Contact Entry",
       "kind": "custom",
-      "description": "Dark-ink email with a text-only underline on each wrapped line and an inline arrow beside the address.",
-      "html": "<div class=\"ds-contact\"><a class=\"ds-email\" href=\"mailto:brantleywyche24@gmail.com\"><small>Send an email</small><span class=\"ds-address\"><strong>brantleywyche24</strong><wbr><span class=\"ds-tail\"><strong>@gmail.com</strong><span class=\"ds-arrow\" aria-hidden=\"true\">↗</span></span></span></a><a class=\"ds-resume\" href=\"/Brantley-Wyche-Resume.pdf\" download>Download résumé ↓</a></div>",
-      "css": ".ds-contact{--grid:1.5rem;padding:var(--grid);background-color:#fbfaf4;background-image:linear-gradient(rgb(8 113 102 / 8%) 1px,transparent 1px),linear-gradient(90deg,rgb(8 113 102 / 8%) 1px,transparent 1px);background-size:var(--grid) var(--grid);font-family:\"IBM Plex Sans\",system-ui,sans-serif}.ds-email{display:block;width:fit-content;max-width:100%;min-height:48px;text-decoration:none;color:#101820}.ds-email small{display:block;font:500 .75rem/var(--grid) \"JetBrains Mono\",monospace;letter-spacing:.06em;text-transform:uppercase;color:#526168}.ds-address{position:relative;top:.25rem;display:block;font-size:1.25rem;line-height:var(--grid);overflow-wrap:anywhere}.ds-address strong{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:0}.ds-arrow{display:inline-block;margin-left:.4em}.ds-resume{display:flex;align-items:center;min-height:44px;margin-top:8px;color:#087166;font-size:.9rem;font-weight:600;text-underline-offset:.22em}.ds-contact a:hover,.ds-contact a:active{color:#075b53}.ds-contact a:focus-visible{outline:3px solid #087166;outline-offset:4px;border-radius:4px}.ds-tail{display:inline-block;max-width:100%;vertical-align:top}"
+      "description": "Dark-ink email on the graph ruling with a Copy button beside it and a handwritten hint below; the underline follows each wrapped line.",
+      "html": "<div class=\"ds-contact\"><div class=\"ds-email-line\"><a class=\"ds-email\" href=\"mailto:brantleywyche24@gmail.com\"><strong>brantleywyche24</strong><wbr><strong>@gmail.com</strong></a><button class=\"ds-copy\" type=\"button\" aria-label=\"Copy email address\">Copy</button></div><span class=\"ds-hint\" aria-hidden=\"true\">↖ best way to reach me</span><a class=\"ds-resume\" href=\"/Brantley-Wyche-Resume.pdf\" download>Download résumé ↓</a></div>",
+      "css": ".ds-contact{--grid:1.5rem;padding:var(--grid);background-color:#fbfaf4;background-image:linear-gradient(rgb(8 113 102 / 8%) 1px,transparent 1px),linear-gradient(90deg,rgb(8 113 102 / 8%) 1px,transparent 1px);background-size:var(--grid) var(--grid);font-family:\"IBM Plex Sans\",system-ui,sans-serif}.ds-email-line{position:relative;top:.25rem;font-size:1.25rem;font-weight:600;line-height:var(--grid);overflow-wrap:anywhere}.ds-email{padding-block:.625rem;color:#101820;text-decoration:none}.ds-email strong{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:0}.ds-copy{display:inline-flex;align-items:center;height:44px;margin:-10px 0 -10px .35rem;padding:0 .4rem;vertical-align:top;border:0;background:none;color:#087166;font:600 .875rem/1 \"IBM Plex Sans\",system-ui,sans-serif;cursor:pointer}.ds-hint{display:inline-block;margin:.5rem 0 .25rem 3.5rem;transform:rotate(-3deg);font:600 1.375rem/1 Caveat,\"Segoe Print\",cursive;color:#087166}.ds-resume{display:flex;align-items:center;min-height:44px;margin-top:8px;color:#087166;font-size:.9rem;font-weight:600;text-underline-offset:.22em}.ds-contact a:hover,.ds-contact a:active,.ds-copy:hover{color:#075b53}.ds-contact :focus-visible{outline:3px solid #087166;outline-offset:4px;border-radius:4px}"
     }
   ],
   "narrative": {
@@ -405,7 +423,9 @@
       "Don’t hide sections behind scroll-reveal observers.",
       "Don’t shrink or truncate important content to force it into a fixed layout.",
       "Don’t replace intentionally unfinished projects with invented case studies.",
-      "Don’t tape every card. Tape on everything stops meaning anything, and sticky notes stick on their own."
+      "Don’t tape every card. Tape on everything stops meaning anything, and sticky notes stick on their own.",
+      "Don’t put a yellow highlighter on blueprint blue; it turns olive.",
+      "Don’t hard-code a color that differs between themes; give it a light-dark() token."
     ]
   }
 }

@@ -21,3 +21,16 @@ export function Tape({ side = 'right', className = '' }: { side?: 'left' | 'righ
 export function FieldLabel({ children }: { children: ReactNode }) {
   return <span className="field-label">{children}</span>;
 }
+
+/** A handwritten annotation. Hidden from assistive technology because it repeats nearby content. */
+export function MarginNote({ children, className = '' }: { children: ReactNode; className?: string }) {
+  return (
+    <span aria-hidden="true" className={`margin-note ${className}`.trim()}>
+      {children}
+      <svg className="margin-note-arrow" viewBox="0 0 40 20">
+        <path d="M2 12c8-5 20-6.5 34-2" />
+        <path d="m29.5 4.5 7 5.6-7.5 4.2" />
+      </svg>
+    </span>
+  );
+}

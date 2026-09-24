@@ -16,7 +16,11 @@ export default function App() {
     let id: string;
     try { id = decodeURIComponent(fragment); }
     catch { return; }
-    document.getElementById(id)?.scrollIntoView({ behavior: 'instant' });
+    const target = document.getElementById(id);
+    if (!target) return;
+    target.scrollIntoView({ behavior: 'instant' });
+    // Repeat the fragment navigation now that the target exists, so :target styles apply.
+    window.location.replace(window.location.hash);
   }, []);
 
   return (

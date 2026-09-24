@@ -54,7 +54,27 @@ export const Close = ({ size = 18, className }: IconProps) => (
   </svg>
 );
 
-export const Github = ({ size = 18, className }: IconProps) => (
+export const Copy = ({ size = 18, className }: IconProps) => (
+  <svg {...base(size)} className={className}>
+    <rect x="8.5" y="8.5" width="11" height="12" rx="2" />
+    <path d="M15.5 8.5V5.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h2" />
+  </svg>
+);
+
+export const Check = ({ size = 18, className }: IconProps) => (
+  <svg {...base(size)} className={className}>
+    <path d="m5 12.5 4.5 4.5L19 7.5" />
+  </svg>
+);
+
+export const Contrast = ({ size = 18, className }: IconProps) => (
+  <svg {...base(size)} className={className}>
+    <circle cx="12" cy="12" r="8.5" />
+    <path d="M12 3.5a8.5 8.5 0 0 1 0 17Z" fill="currentColor" />
+  </svg>
+);
+
+export const Github =({ size = 18, className }: IconProps) => (
   <svg
     width={size}
     height={size}
