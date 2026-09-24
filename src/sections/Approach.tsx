@@ -1,6 +1,6 @@
 import { principles } from '../data/approach';
 import { Container } from '../components/layout/Container';
-import { NoteCard, Tape } from '../components/ui/Editorial';
+import { NoteCard } from '../components/ui/Editorial';
 import { SectionHeading } from '../components/ui/SectionHeading';
 
 export function Approach() {
@@ -9,10 +9,9 @@ export function Approach() {
       <Container>
         <SectionHeading title="How I work" />
         <ul className="principles">
-          {principles.map((principle, index) => (
+          {principles.map((principle) => (
             <li key={principle.title}>
               <NoteCard className="principle-note">
-                <Tape side={index === 1 ? 'right' : 'left'} />
                 <h3 className="handwritten note-heading">{principle.title}</h3>
                 <p>{principle.body}</p>
               </NoteCard>

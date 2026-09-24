@@ -1,7 +1,7 @@
 import { skillGroups, skillLevels } from '../data/skills';
 import { Container } from '../components/layout/Container';
 import { SectionHeading } from '../components/ui/SectionHeading';
-import { PaperCard, Tape } from '../components/ui/Editorial';
+import { PaperCard } from '../components/ui/Editorial';
 
 export function Skills() {
   return (
@@ -9,9 +9,8 @@ export function Skills() {
       <Container>
         <SectionHeading title="Toolkit" />
         <div className="skill-groups">
-          {skillGroups.map((group, index) => (
+          {skillGroups.map((group) => (
             <PaperCard className="skill-group" key={group.title}>
-              <Tape side={index === 1 ? 'right' : 'left'} />
               <h3 className="handwritten note-heading">{group.title}</h3>
               {skillLevels.map(({ id, label }) => {
                 const items = group.skills.filter((skill) => skill.level === id);

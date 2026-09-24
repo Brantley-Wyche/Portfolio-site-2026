@@ -12,12 +12,12 @@ function ProjectLink({ href, title, type }: { href: string; title: string; type:
   );
 }
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project, tapeSide }: { project: Project; tapeSide: 'left' | 'right' }) {
   const hasDetails = Boolean(project.description || project.role || project.tags?.length || project.repoUrl || project.liveUrl);
 
   return (
     <PaperCard className="project-card">
-      <Tape side={project.featured ? 'left' : 'right'} />
+      <Tape side={tapeSide} />
       <ProjectBlueprint kind={project.visualKind} />
       <div className="project-body">
         {!hasDetails && <p className="field-label">In progress</p>}

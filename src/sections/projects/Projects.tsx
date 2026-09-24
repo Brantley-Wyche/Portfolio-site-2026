@@ -15,9 +15,9 @@ export function Projects() {
       <Container>
         <SectionHeading title="Selected work" lead={allInProgress ? 'Projects in progress. Case studies will follow as the work is ready.' : undefined} />
         {orderedProjects.length > 0 && <div className="project-grid">
-          {orderedProjects.map((project) => (
+          {orderedProjects.map((project, index) => (
             <article key={project.id} className="min-w-0">
-              <ProjectCard project={project} />
+              <ProjectCard project={project} tapeSide={index % 2 === 1 ? 'right' : 'left'} />
             </article>
           ))}
         </div>}

@@ -16,7 +16,7 @@ function ArchitectureDrawing() {
         <circle cx="334" cy="230" r="5" fill="currentColor" stroke="none" />
         <path d="m382 112 8 7-8 7M402 223l8 7-8 7" />
       </g>
-      <g fill="currentColor" className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent">
+      <g fill="currentColor" className="blueprint-annotation">
         <text x="78" y="42">Interface</text>
         <text x="390" y="66">System</text>
         <text x="410" y="197">Outcome</text>

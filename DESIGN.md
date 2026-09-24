@@ -58,9 +58,10 @@ typography:
     fontWeight: 500
   diagram-annotation:
     fontFamily: "JetBrains Mono, ui-monospace, Consolas, monospace"
-    fontSize: "11px"
-    fontWeight: 400
-    letterSpacing: "0.18em"
+    # SVG user units in the 640-unit drawing; renders about 10–11px at current card widths.
+    fontSize: "22px"
+    fontWeight: 500
+    letterSpacing: "0.12em"
   supporting:
     fontFamily: "IBM Plex Sans, system-ui, sans-serif"
     fontSize: "0.875rem"
@@ -165,13 +166,13 @@ Primary button text uses on-primary; normal text and small teal links must maint
 
 ## Typography
 
-Literata gives headings and evidence values a printed-book character. IBM Plex Sans carries readable prose and controls, with its natural spacing and 1.65 body line height. JetBrains Mono is reserved for short field labels and identity metadata. Caveat gives the approach and toolkit note headings and the contact location note a consistent handwritten voice; important body copy remains in IBM Plex Sans. Toolkit entries use 500 weight and dark ink for clear separation from their smaller proficiency labels. Literata uses automatic optical sizing across its 7–72 range; load only its 600 weight and the 400, 500, and 600 weights used by IBM Plex Sans.
+Literata gives headings and evidence values a printed-book character. IBM Plex Sans carries readable prose and controls, with its natural spacing and 1.65 body line height. JetBrains Mono is reserved for short field labels and identity metadata. Caveat gives the approach and toolkit note headings and the contact location note a consistent handwritten voice; important body copy remains in IBM Plex Sans. Toolkit entries use 500 weight and dark ink for clear separation from their smaller proficiency labels. Literata uses automatic optical sizing across its 7–72 range; load only its 600 weight, the 400, 500, and 600 weights used by IBM Plex Sans, and JetBrains Mono 500.
 
 Body copy uses the body role. Supporting dates and evidence labels are 0.875rem; field labels use the label role. Headings balance lines and may wrap long words rather than overflow. Use -0.03em tracking for the large name and -0.02em for headings; keep body text at normal tracking. Fonts load with swap and system fallbacks.
 
 Contact uses a shared 1.5rem graph row for spacing and leading: its heading spans two rows, while each description, label, and email line spans one. The address has a 0.25rem optical baseline offset so the ink sits on the ruling. Card padding starts text on grid intersections, including the narrower one-cell mobile gutter. The graph scales with enlarged text.
 
-The diagram-annotation role is confined to decorative text inside the project SVG sketches, which are hidden from assistive technology and scale with the drawing. It carries no project information or controls. It is not a size option for readable UI labels, which retain the label role above.
+The diagram-annotation role is confined to decorative text inside the project SVG sketches, which are hidden from assistive technology and scale with the drawing. Its size is set in SVG user units so it renders near 11px at current card widths; a CSS pixel size would shrink with the drawing to an unreadable 5px. It carries no project information or controls. It is not a size option for readable UI labels, which retain the label role above.
 
 ## Layout
 
@@ -183,7 +184,7 @@ On viewports below 40rem, nested cards use 20px padding to retain reading space.
 
 ## Elevation & Depth
 
-Paper cards use subtle ambient shadows; yellow notes are slightly more lifted. Graph paper uses fine teal lines on a light surface. Tape crosses the top edge of selected cards. Only the first and last approach notes rotate, by half a degree, when their container supports three columns.
+Paper cards use subtle ambient shadows. The yellow contact note is slightly more lifted. Approach notes behave like sticky notes: the adhesive top lies flat, and a narrow shadow and faint shading show only the bottom edge lifting. Graph paper uses fine teal lines on a light surface. Tape marks things pinned into the notebook, only the project figures and the contact location note, so it keeps its meaning. Only the first and last approach notes rotate, by half a degree, when their container supports three columns.
 
 Shadows describe material. They do not imply that passive cards can be clicked. Exact shadow values are maintained in the sidecar and CSS.
 
@@ -194,14 +195,14 @@ Paper cards have gently curved corners, controls and graph surfaces slightly tig
 ## Components
 
 - **Hero:** an asymmetric notebook opening page with no top border. The name leads; role and location are vertically centered in a ruled margin on wide screens. Career highlights form a quiet ledger alongside the introduction. A single View projects link leads to Selected work from the bottom navigation row; the résumé stays in the header. On smaller screens the margin becomes a row, the link follows the introduction, and the evidence comes last, retaining left alignment. Evidence values and labels share a row from an 18rem container; below that they stack to accommodate enlarged text.
-- **Experience tape:** the current role keeps its top-right tape; the second career card has green tape crossing its top-left edge.
-- **Education:** a distinct white paper panel with a clear degree heading and green tape crossing the top-right edge. Its label and degree align with the career-card columns on wide screens and stack below 48rem. No dates or duplicate résumé action.
+- **Experience:** plain white paper cards without tape; the evidence carries the section.
+- **Education:** a distinct white paper panel with a clear degree heading. Its label and degree align with the career-card columns on wide screens and stack below 48rem. No dates or duplicate résumé action.
 - **ButtonLink:** native anchors, primary and secondary variants, 48px minimum height; small header variant 44px. Darker teal on primary hover/active, tinted paper on secondary hover. Focus uses a 3px teal outline with 4px offset.
 - **Navigation:** paper header, normal anchor links, always-visible résumé. The mobile disclosure focuses Experience on opening, closes on Escape with focus restored, and closes when a link is followed or the desktop layout becomes active.
 - **Paper / graph / note:** shared material primitives. Tape is decorative and cannot intercept pointer input. Project illustrations preserve aspect ratio; the full cards stay passive.
-- **Project cards:** optional descriptions, roles, tags, and external links render only when supplied. Link names include their visible Code or Visit labels. Empty collections retain the Work destination.
+- **Project cards:** taped figures; tape alternates left and right by position. Optional descriptions, roles, tags, and external links render only when supplied. Link names include their visible Code or Visit labels. Empty collections retain the Work destination.
 - **Approach and toolkit note headings:** both use the shared handwritten heading and bottom rule. Yellow notes use their warmer border color; white notes use the paper border. Body copy remains in IBM Plex Sans.
-- **Toolkit:** three white notes with green tape, handwritten category headings, and an ink rule below each heading. The middle Interface craft note has top-right tape; the other two keep top-left tape. Proficiency labels appear once per subgroup, above medium-weight skill lists. All three notes share the tallest note's height using flexible grid tracks, including when stacked; content can grow without fixed heights or clipping.
+- **Toolkit:** three white notes with handwritten category headings and an ink rule below each heading. Proficiency labels appear once per subgroup, above medium-weight skill lists. When the notes sit side by side, all three share the tallest note's height using flexible grid tracks; stacked notes fit their own content. Content can grow without fixed heights or clipping.
 - **Contact:** graph paper with a prominent dark-ink email entry and a supporting résumé text link. The underline follows the actual text on each wrapped line; an inline arrow follows the address with a 0.4em gap. A zero underline offset keeps the rule on the graph baseline. These native anchors use ink and rules rather than filled button surfaces. The email can break before the domain or within a long word, while its actual text and mailto address remain intact. A smaller taped yellow note carries only the handwritten location, without an extra label. The footer keeps only Back to top beside the copyright.
 - **Motion:** one 400ms entrance on the hero introduction; 160ms button color transitions. Content elsewhere is visible immediately. Reduced motion disables these transitions and smooth scrolling.
 
@@ -216,3 +217,4 @@ Paper cards have gently curved corners, controls and graph surfaces slightly tig
 - Don’t hide sections behind scroll-reveal observers.
 - Don’t shrink or truncate important content to force it into a fixed layout.
 - Don’t replace intentionally unfinished projects with invented case studies.
+- Don’t tape every card. Tape on everything stops meaning anything, and sticky notes stick on their own.

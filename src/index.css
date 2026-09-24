@@ -31,9 +31,13 @@
   --accent-strong: #075b53;
   --accent-soft: #e5efe8;
   --note: #f3dda0;
+  --note-border: #dcc57d;
+  --graph: #fbfaf4;
   --tape: #4b9887;
   --shadow-paper: 0 2px 4px rgb(58 47 29 / 4%), 0 8px 18px rgb(58 47 29 / 4%);
   --shadow-note: 0 4px 12px rgb(79 61 24 / 8%), 0 12px 26px rgb(79 61 24 / 6%);
+  /* Adhesive keeps the top flat; only the bottom edge lifts off the page. */
+  --shadow-sticky: 0 1px 2px rgb(79 61 24 / 8%), 0 16px 14px -12px rgb(79 61 24 / 30%);
   color-scheme: light;
 }
 
@@ -163,11 +167,12 @@
   .paper-card { position: relative; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); box-shadow: var(--shadow-paper); }
   .graph-paper {
     position: relative; overflow: hidden; border: 1px solid var(--border-strong); border-radius: 9px;
-    background-color: #fbfaf4;
-    background-image: linear-gradient(rgb(8 113 102 / 8%) 1px, transparent 1px), linear-gradient(90deg, rgb(8 113 102 / 8%) 1px, transparent 1px);
+    --graph-line: color-mix(in srgb, var(--accent) 8%, transparent);
+    background-color: var(--graph);
+    background-image: linear-gradient(var(--graph-line) 1px, transparent 1px), linear-gradient(90deg, var(--graph-line) 1px, transparent 1px);
     background-position: -1px -1px; background-size: 24px 24px;
   }
-  .note-card { position: relative; border: 1px solid #dcc57d; border-radius: 3px; background: var(--note); box-shadow: var(--shadow-note); }
+  .note-card { position: relative; border: 1px solid var(--note-border); border-radius: 3px; background: var(--note); box-shadow: var(--shadow-note); }
   .tape {
     position: absolute; z-index: 1; top: -0.7rem; width: 4.5rem; height: 1.35rem; pointer-events: none;
     background: repeating-linear-gradient(90deg, rgb(255 255 255 / 6%) 0 2px, transparent 2px 5px), color-mix(in srgb, var(--tape) 80%, transparent);
@@ -196,6 +201,8 @@
   .blueprint-caption { position: absolute; top: 0.65rem; left: 0.85rem; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500; }
   .blueprint-drawing { position: absolute; inset: 1.5rem 0.25rem 0; display: grid; place-items: center; }
   .blueprint-line { stroke: currentColor; stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  /* SVG user units: the 640-unit drawing renders near half size, so labels land around 11px. */
+  .blueprint-annotation { font-family: var(--font-mono); font-size: 22px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; }
   .project-body { padding: 1rem 0.25rem 0.25rem; min-width: 0; }
   .project-body h3 { margin-top: 0.35rem; font-size: 1.45rem; overflow-wrap: anywhere; }
   .project-description { margin-top: 0.85rem; color: var(--text-muted); overflow-wrap: anywhere; }
@@ -204,12 +211,16 @@
   .project-details p, .project-tags { margin-top: 0.3rem; overflow-wrap: anywhere; }
   .project-tags { display: flex; flex-wrap: wrap; gap: 0.3rem 0.85rem; color: var(--text-muted); }
 
-  .principles { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; padding-top: 0.4rem; }
-  .principle-note { height: 100%; padding: 1.75rem 1.5rem 1.5rem; }
-  .principle-note .note-heading { border-color: #dcc57d; }
+  .principles { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .principle-note {
+    height: 100%; padding: 1.5rem;
+    background: linear-gradient(var(--note) 60%, color-mix(in srgb, var(--note), var(--note-border) 35%));
+    box-shadow: var(--shadow-sticky);
+  }
+  .principle-note .note-heading { border-color: var(--note-border); }
   .principle-note p { margin-top: 0.75rem; font-size: 1rem; line-height: 1.6; color: var(--text-muted); }
-  .skill-groups { display: grid; grid-template-columns: minmax(0, 1fr); grid-auto-rows: 1fr; align-items: stretch; gap: 1.5rem; padding-top: 0.4rem; }
-  .skill-group { min-width: 0; padding: 1.75rem 1.5rem 1.5rem; border-radius: 3px; }
+  .skill-groups { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .skill-group { min-width: 0; padding: 1.5rem; border-radius: 3px; }
   .skill-level { margin-top: 1.25rem; }
   .skill-level ul { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; margin-top: 0.5rem; }
   .skill-level li { font-size: 1rem; font-weight: 500; color: var(--text); }
@@ -259,7 +270,9 @@
   }
   @container (min-width: 51rem) {
     .principles, .skill-groups { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .principle-note { padding: 1.75rem 1.35rem 1.5rem; }
+    /* Side-by-side notes share the tallest note's height; stacked notes fit their content. */
+    .skill-groups { grid-auto-rows: 1fr; }
+    .principle-note { padding: 1.5rem 1.35rem; }
     .principles li:first-child { transform: rotate(-0.5deg); }
     .principles li:last-child { transform: rotate(0.5deg); }
   }
