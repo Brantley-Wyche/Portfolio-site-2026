@@ -1,7 +1,13 @@
 <!-- installing-frontend-workflow:start -->
 ## Frontend workflow
 
-Apply this workflow automatically whenever work changes React components, routes, styles, UI behavior, accessibility, responsive behavior, or frontend performance. Do not run the full workflow for backend-only, documentation-only, or non-UI test changes.
+Apply this workflow automatically whenever work changes React components, routes, styles, UI behavior, accessibility, responsive behavior, or frontend performance. Do not run it for backend-only, documentation-only, or non-UI test changes.
+
+Scale it to the change, and move up a tier if the work grows:
+
+- **Trivial** (copy text, a single token or class, or an obvious one-line fix with no layout or behavior change): make the change, then run step 5's repository verification.
+- **Refinement** (changes inside an existing surface or component): run steps 2 through 5, using Impeccable only for step 4 remediation.
+- **New surface or system change** (a new page, flow, or component family, or changes to the design system, tokens, or visual identity): run every step.
 
 1. Use the `impeccable` skill (`$impeccable` in Codex, `/impeccable` in Claude Code) as the product, UX, and visual-design authority. Preserve the project's established product requirements, design system, components, and visual identity for narrow refinements. Follow Impeccable's discovery and shaping workflow before creating a new surface or replacing the visual system.
 2. Use the `vercel-react-best-practices` skill (`$vercel-react-best-practices` in Codex, `/vercel-react-best-practices` in Claude Code) while writing or refactoring React code. Prioritize waterfalls, bundle size, server behavior, data fetching, and rendering before low-impact micro-optimizations. Inspect the actual framework, versions, adapters, and deployment target; apply framework-specific APIs only when supported.
