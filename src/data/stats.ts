@@ -9,6 +9,6 @@ export interface Stat {
 
 export const stats: Stat[] = [
   { value: '5+', label: 'Years building production frontends' },
-  { value: '8', label: 'Teams aligned through a major framework migration' },
-  { value: '$1M+', label: 'Saved via an internal tool I helped ship' },
+  { value: '8 teams', label: 'Coordinated through an Angular migration' },
+  { value: '$1M+', label: 'Annual savings from an internal tool' },
 ];

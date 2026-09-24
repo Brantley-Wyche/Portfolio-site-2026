@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 .codex-review/
+.impeccable/hook.cache.json
+docs/superpowers/
 .claude/settings.local.json
 
 # Editor directories and files
