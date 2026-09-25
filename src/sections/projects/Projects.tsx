@@ -11,13 +11,13 @@ export function Projects() {
   const allInProgress = projects.every((project) => !project.description && !project.role && !project.tags?.length && !project.liveUrl && !project.repoUrl);
 
   return (
-    <section id="projects" className="section-shell">
+    <section id="projects" className={allInProgress ? 'section-shell projects--placeholder' : 'section-shell'}>
       <Container>
         <SectionHeading title="Selected work" lead={allInProgress ? 'Projects in progress. Case studies will follow as the work is ready.' : undefined} />
         {orderedProjects.length > 0 && <div className="project-grid">
-          {orderedProjects.map((project) => (
+          {orderedProjects.map((project, index) => (
             <article key={project.id} className="min-w-0">
-              <ProjectCard project={project} />
+              <ProjectCard project={project} tapeSide={index % 2 === 1 ? 'right' : 'left'} />
             </article>
           ))}
         </div>}

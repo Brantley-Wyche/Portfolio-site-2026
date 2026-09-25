@@ -1,6 +1,6 @@
 import { education, experience } from '../data/experience';
 import { Container } from '../components/layout/Container';
-import { PaperCard, Tape } from '../components/ui/Editorial';
+import { PaperCard } from '../components/ui/Editorial';
 import { SectionHeading } from '../components/ui/SectionHeading';
 
 export function Experience() {
@@ -9,11 +9,9 @@ export function Experience() {
       <Container>
         <SectionHeading title="Experience" />
         <ol className="experience-list">
-          {experience.map((role, index) => (
+          {experience.map((role) => (
             <li key={`${role.company}-${role.period}`}>
               <PaperCard className="experience-card">
-                {role.current && <Tape side="right" />}
-                {index === 1 && <Tape side="left" />}
                 <div className="experience-meta">
                   <p className="field-label">{role.company}</p>
                   <p className="experience-period">{role.period}</p>
@@ -30,7 +28,6 @@ export function Experience() {
           ))}
         </ol>
         <PaperCard className="education">
-          <Tape side="right" />
           <p className="field-label">Education</p>
           <div>
             <h3>{education.degree}</h3>

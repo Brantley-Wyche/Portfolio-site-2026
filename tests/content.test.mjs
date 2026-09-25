@@ -10,9 +10,13 @@ let Hero;
 let projects;
 let stats;
 let siteMetadata;
+let Contact;
+let site;
 
 before(async () => {
   server = await createServer({ server: { middlewareMode: true, hmr: false }, appType: 'custom' });
+  ({ Contact } = await server.ssrLoadModule('/src/sections/Contact.tsx'));
+  ({ site } = await server.ssrLoadModule('/src/data/site.ts'));
   ({ Projects } = await server.ssrLoadModule('/src/sections/projects/Projects.tsx'));
   ({ Hero } = await server.ssrLoadModule('/src/sections/Hero.tsx'));
   ({ projects } = await server.ssrLoadModule('/src/data/projects.ts'));
@@ -89,5 +93,21 @@ test('a completed project exposes its supplied details and safe external links',
     assert.match(html, /href="https:\/\/example.com\/demo"/);
     assert.match(html, /aria-label="Visit A &amp; B/);
     assert.equal((html.match(/rel="noreferrer noopener"/g) ?? []).length, 2);
+  });
+});
+
+test('the email entry has a named copy button, an announcer, and a hint hidden from assistive technology', () => {
+  const html = renderToStaticMarkup(createElement(Contact));
+  assert.ok(html.includes(`href="mailto:${site.email}"`));
+  assert.match(html, /<button[^>]*aria-label="Copy email address"[^>]*>/);
+  assert.match(html, /role="status"/);
+  assert.match(html, /<span aria-hidden="true" class="margin-note contact-hint">best way to reach me/);
+  assert.doesNotMatch(html, /Send an email/);
+});
+
+test('a placeholder-only project section is marked so print can leave it out', () => {
+  assert.match(renderToStaticMarkup(createElement(Projects)), /class="section-shell projects--placeholder"/);
+  withItems(projects, [{ id: 'finished', title: 'Finished', visualKind: 'interface', description: 'Real work.' }], () => {
+    assert.doesNotMatch(renderToStaticMarkup(createElement(Projects)), /projects--placeholder/);
   });
 });
